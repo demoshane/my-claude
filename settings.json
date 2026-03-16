@@ -46,6 +46,14 @@
             "command": "node \"/Users/tuomasleppanen/.claude/hooks/gsd-check-update.js\""
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/tuomasleppanen/.claude/hooks/claude-config-backup-session.js\""
+          }
+        ]
       }
     ],
     "PostToolUse": [
