@@ -1,23 +1,49 @@
-# Runtime & volatile data — do not back up
-history.jsonl
-mcp-needs-auth-cache.json
-security_warnings_state_*.json
+# Ignore everything by default — explicit allowlist below
+*
 
-# Large runtime directories
-projects/
-sessions/
-plans/
-todos/
-telemetry/
-debug/
-file-history/
-backups/
-shell-snapshots/
-paste-cache/
-image-cache/
-tasks/
-ide/
-plugins/
+# ── Directories to traverse ──────────────────────────────
+!hooks/
+!agents/
+!commands/
+!get-shit-done/
+!cache/
+!plugins/
+
+# ── All content within tracked directories ───────────────
+!hooks/**
+!agents/**
+!commands/**
+!get-shit-done/**
+!cache/**
+
+# ── Specific plugin config files only (not cache/ or marketplaces/) ──
 !plugins/installed_plugins.json
 !plugins/known_marketplaces.json
 !plugins/blocklist.json
+
+# ── Root-level config files ───────────────────────────────
+!.gitignore
+!README.md
+!CLAUDE.md
+!*.md
+!settings.json
+!package.json
+!policy-limits.json
+!gsd-file-manifest.json
+
+# ── Always exclude (must come last to override allowlist) ──
+.DS_Store
+**/.DS_Store
+
+# ── Never commit secrets ──────────────────────────────────
+.env
+.env.*
+*credentials*
+*secrets*
+*secret*
+*_key
+*_token
+*.pem
+*.key
+*.p12
+*.pfx

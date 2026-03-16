@@ -1,0 +1,275 @@
+{
+  "version": 2,
+  "plugins": {
+    "playground@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/d5c15b861cd2",
+        "version": "d5c15b861cd2",
+        "installedAt": "2026-02-18T13:52:16.082Z",
+        "lastUpdated": "2026-03-14T11:18:15.228Z",
+        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+      }
+    ],
+    "voltagent-biz@voltagent-subagents": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/voltagent-subagents/voltagent-biz/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-02-19T08:49:17.285Z",
+        "lastUpdated": "2026-02-19T08:49:17.285Z",
+        "gitCommitSha": "f0f9aba02d31a8ed53331b85379adf7bc8f9719a"
+      }
+    ],
+    "context-mode@claude-context-mode": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-context-mode/context-mode/0.9.22",
+        "version": "0.9.22",
+        "installedAt": "2026-03-04T18:06:31.469Z",
+        "lastUpdated": "2026-03-10T07:34:42.469Z",
+        "gitCommitSha": "ff31970516d301cef94a2f357412a2970eb9acf5"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/d5c15b861cd2",
+        "version": "d5c15b861cd2",
+        "installedAt": "2026-03-07T20:47:20.383Z",
+        "lastUpdated": "2026-03-14T11:18:15.210Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/code-review/d5c15b861cd2",
+        "version": "d5c15b861cd2",
+        "installedAt": "2026-03-07T20:47:20.430Z",
+        "lastUpdated": "2026-03-14T11:18:15.209Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "feature-dev@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/feature-dev/d5c15b861cd2",
+        "version": "d5c15b861cd2",
+        "installedAt": "2026-03-07T20:47:20.486Z",
+        "lastUpdated": "2026-03-14T11:18:15.221Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "code-simplifier@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-03-07T20:47:20.519Z",
+        "lastUpdated": "2026-03-07T20:47:20.519Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "ralph-loop@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/ralph-loop/d5c15b861cd2",
+        "version": "d5c15b861cd2",
+        "installedAt": "2026-03-07T20:47:20.577Z",
+        "lastUpdated": "2026-03-14T11:18:15.226Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "playwright@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/d5c15b861cd2",
+        "version": "d5c15b861cd2",
+        "installedAt": "2026-03-07T20:47:20.603Z",
+        "lastUpdated": "2026-03-14T11:18:15.196Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "security-guidance@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/security-guidance/d5c15b861cd2",
+        "version": "d5c15b861cd2",
+        "installedAt": "2026-03-07T20:47:20.646Z",
+        "lastUpdated": "2026-03-14T11:18:15.206Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "claude-md-management@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-03-07T20:47:20.696Z",
+        "lastUpdated": "2026-03-07T20:47:20.696Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "php-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/php-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-03-07T20:47:20.728Z",
+        "lastUpdated": "2026-03-07T20:47:20.728Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "semgrep@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/semgrep/0.5.1",
+        "version": "0.5.1",
+        "installedAt": "2026-03-07T20:47:21.894Z",
+        "lastUpdated": "2026-03-11T06:47:07.363Z",
+        "gitCommitSha": "6f39623510411a255def92c98f89b595e0b086f4"
+      }
+    ],
+    "accessibility-compliance@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/accessibility-compliance/1.2.2",
+        "version": "1.2.2",
+        "installedAt": "2026-03-07T20:47:21.929Z",
+        "lastUpdated": "2026-03-07T20:47:21.929Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "agent-orchestration@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/agent-orchestration/1.2.1",
+        "version": "1.2.1",
+        "installedAt": "2026-03-07T20:47:21.949Z",
+        "lastUpdated": "2026-03-07T20:47:21.949Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "agent-teams@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/agent-teams/1.0.2",
+        "version": "1.0.2",
+        "installedAt": "2026-03-07T20:47:22.000Z",
+        "lastUpdated": "2026-03-07T20:47:22.000Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "backend-development@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/backend-development/1.3.1",
+        "version": "1.3.1",
+        "installedAt": "2026-03-07T20:47:22.053Z",
+        "lastUpdated": "2026-03-07T20:47:22.053Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "c4-architecture@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/c4-architecture/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-03-07T20:47:22.074Z",
+        "lastUpdated": "2026-03-07T20:47:22.074Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "code-documentation@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/code-documentation/1.2.0",
+        "version": "1.2.0",
+        "installedAt": "2026-03-07T20:47:22.096Z",
+        "lastUpdated": "2026-03-07T20:47:22.096Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "full-stack-orchestration@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/full-stack-orchestration/1.3.0",
+        "version": "1.3.0",
+        "installedAt": "2026-03-07T20:47:22.118Z",
+        "lastUpdated": "2026-03-07T20:47:22.118Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "incident-response@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/incident-response/1.3.1",
+        "version": "1.3.1",
+        "installedAt": "2026-03-07T20:47:22.148Z",
+        "lastUpdated": "2026-03-07T20:47:22.148Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "typescript-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-03-07T20:51:54.978Z",
+        "lastUpdated": "2026-03-07T20:51:54.978Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
+      }
+    ],
+    "comprehensive-review@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/comprehensive-review/1.3.0",
+        "version": "1.3.0",
+        "installedAt": "2026-03-07T20:51:55.004Z",
+        "lastUpdated": "2026-03-07T20:51:55.004Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "developer-essentials@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/developer-essentials/1.0.2",
+        "version": "1.0.2",
+        "installedAt": "2026-03-07T20:51:55.039Z",
+        "lastUpdated": "2026-03-07T20:51:55.039Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "javascript-typescript@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/javascript-typescript/1.2.2",
+        "version": "1.2.2",
+        "installedAt": "2026-03-07T20:51:55.062Z",
+        "lastUpdated": "2026-03-07T20:51:55.062Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "shell-scripting@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/shell-scripting/1.2.2",
+        "version": "1.2.2",
+        "installedAt": "2026-03-07T20:51:55.117Z",
+        "lastUpdated": "2026-03-07T20:51:55.117Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ],
+    "unit-testing@claude-code-workflows": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-code-workflows/unit-testing/1.2.0",
+        "version": "1.2.0",
+        "installedAt": "2026-03-07T20:51:55.137Z",
+        "lastUpdated": "2026-03-07T20:51:55.137Z",
+        "gitCommitSha": "a6f0f457c4e41cbb0ad329b691d28e255a829210"
+      }
+    ]
+  }
+}
