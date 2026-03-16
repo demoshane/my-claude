@@ -2,7 +2,6 @@
 history.jsonl
 mcp-needs-auth-cache.json
 security_warnings_state_*.json
-policy-limits.json
 
 # Large runtime directories
 projects/
