@@ -74,14 +74,28 @@ git -C ~/.claude remote -v
 
 ---
 
-## How auto-backup works
+## How auto-backup and sync works
 
-Two hooks keep this repo in sync automatically:
+Two hooks keep all machines in sync automatically:
 
-- **PostToolUse** (`hooks/claude-config-backup.js`) — fires after every file write/edit in `~/.claude/`, commits and pushes the changed file immediately.
-- **SessionStart** (`hooks/claude-config-backup-session.js`) — fires when Claude Code starts, catches any changes made by the app itself (plugin installs, updates) between sessions.
+### SessionStart (`hooks/claude-config-backup-session.js`)
+Runs when Claude Code starts. Syncs in this order:
+1. Detects any local out-of-band changes (plugin installs, app updates)
+2. If local changes exist: stash → pull --rebase → pop stash → commit → push
+3. If no local changes: just pull
 
-You never need to manually commit — changes are pushed to GitHub within seconds.
+### PostToolUse (`hooks/claude-config-backup.js`)
+Fires after every Write/Edit on a tracked config file:
+1. Commits the changed file immediately
+2. Pulls with rebase (to pick up any changes from other machines)
+3. Pushes
+
+You never need to manually commit — changes are pushed within seconds and pulled at the start of every session.
+
+### Multi-machine workflow
+- **Machine A** makes a change → auto-committed and pushed immediately
+- **Machine B** starts a session → SessionStart hook pulls the change automatically
+- No manual `git pull` needed ever
 
 ---
 

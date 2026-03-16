@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // claude-config-backup.js — PostToolUse hook
 // Auto-commits and pushes ~/.claude config files to git when they change.
+// Pulls with rebase before pushing to stay in sync across multiple machines.
 //
 // Watched: CLAUDE.md, *.md, settings.json, hooks/*.js, package.json, .gitignore
 // Ignored: runtime dirs (projects/, sessions/, plans/, etc.)
@@ -63,6 +64,9 @@ process.stdin.on('end', () => {
 
     const names = trackedFiles.map(f => path.relative(CLAUDE_DIR, f)).join(', ');
     git('commit', '-m', `backup: update ${names}`);
+
+    // Pull with rebase before pushing to stay in sync with other machines
+    git('pull', '--rebase', 'origin', 'main');
     git('push', '-u', 'origin', 'HEAD');
 
   } catch (e) {
