@@ -30,6 +30,7 @@
 !package.json
 !policy-limits.json
 !gsd-file-manifest.json
+!*.sh
 
 # ── Always exclude (must come last to override allowlist) ──
 .DS_Store

@@ -43,34 +43,22 @@ mv ~/.claude ~/.claude.bak 2>/dev/null || true
 git clone git@github.com:demoshane/my-claude.git ~/.claude
 ```
 
-### 3. Reinstall plugins
-
-Claude Code will auto-detect `settings.json` and prompt to reinstall plugins on first launch.
-If not, reinstall manually from `plugins/installed_plugins.json` — each entry has the marketplace and plugin name.
-
-Key marketplaces:
-- `claude-plugins-official` → `github:anthropics/claude-plugins-official`
-- `claude-code-workflows` → `github:wshobson/agents`
-- `claude-context-mode` → `github:mksglu/claude-context-mode`
-- `voltagent-subagents` → `https://github.com/VoltAgent/awesome-claude-code-subagents.git`
-
-### 4. Verify hooks work
+### 3. Run the setup script
 
 ```bash
-node ~/.claude/hooks/claude-config-backup.js <<< '{}'
-node ~/.claude/hooks/claude-config-backup-session.js <<< '{}'
+sh ~/.claude/setup.sh
 ```
 
-Both should exit silently (no errors).
+This will:
+- Install the pre-commit secret scanner (not tracked by git, must be installed per machine)
+- Verify git remote, Node.js, and hook scripts
+- Pull latest config from remote
+- Print plugin reinstall instructions
 
-### 5. Set up git remote (if restoring from scratch)
+### 4. Start Claude Code
 
-The repo is already cloned with the correct remote, so auto-backup will work immediately.
-Verify with:
-
-```bash
-git -C ~/.claude remote -v
-```
+Claude Code will auto-detect `settings.json` and prompt to reinstall plugins.
+If not, check `plugins/installed_plugins.json` for the full list and reinstall manually.
 
 ---
 
