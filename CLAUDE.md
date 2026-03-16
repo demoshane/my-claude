@@ -1,0 +1,24 @@
+## Git
+- Never commit automatically. Only commit when the user explicitly asks.
+- Always use `/usr/bin/git -C /path/to/repo` — bare `git` is broken by scm_breeze shell plugin on this machine.
+
+## Web / Fetching
+- Never use WebFetch — it is blocked by a hook. Always use `mcp__plugin_context-mode_context-mode__fetch_and_index` instead.
+
+## Large command output
+- Never use Bash for commands that produce >20 lines of output (builds, logs, find results, etc.).
+- Use `mcp__plugin_context-mode_context-mode__batch_execute` or `execute_file` to keep raw data out of context.
+
+## Learning Habit
+- After each fix confirmed working by the user: analyze what went wrong, extract the root cause, and write it to memory (global CLAUDE.md or project MEMORY.md). Never repeat the same mistake twice.
+
+## Scope Discipline
+- Never perform actions beyond what the user explicitly asked for. When in doubt, ask first.
+
+## Plan Mode
+- Make the plan extremely concise. Sacrifice grammar for the sake of concision.
+- At the end of each plan, give me a list of unresolved questions to answer, if any.
+
+## Tool-specific rules
+When working with Jira: @~/.claude/jira.md
+When working with Second Brain: @~/.claude/second-brain.md

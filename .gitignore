@@ -1,0 +1,22 @@
+# Runtime & volatile data — do not back up
+history.jsonl
+mcp-needs-auth-cache.json
+security_warnings_state_*.json
+policy-limits.json
+
+# Large runtime directories
+projects/
+sessions/
+plans/
+todos/
+telemetry/
+agents/
+debug/
+file-history/
+backups/
+shell-snapshots/
+paste-cache/
+image-cache/
+tasks/
+ide/
+plugins/

@@ -1,0 +1,74 @@
+{
+  "model": "sonnet",
+  "enabledPlugins": {
+    "playground@claude-plugins-official": true,
+    "voltagent-biz@voltagent-subagents": true,
+    "context-mode@claude-context-mode": true,
+    "frontend-design@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "php-lsp@claude-plugins-official": true,
+    "semgrep@claude-plugins-official": true,
+    "accessibility-compliance@claude-code-workflows": true,
+    "agent-orchestration@claude-code-workflows": true,
+    "agent-teams@claude-code-workflows": true,
+    "backend-development@claude-code-workflows": true,
+    "c4-architecture@claude-code-workflows": true,
+    "code-documentation@claude-code-workflows": true,
+    "full-stack-orchestration@claude-code-workflows": true,
+    "incident-response@claude-code-workflows": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "comprehensive-review@claude-code-workflows": true,
+    "developer-essentials@claude-code-workflows": true,
+    "javascript-typescript@claude-code-workflows": true,
+    "shell-scripting@claude-code-workflows": true,
+    "unit-testing@claude-code-workflows": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-workflows": {
+      "source": {
+        "source": "github",
+        "repo": "wshobson/agents"
+      }
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/tuomasleppanen/.claude/hooks/gsd-check-update.js\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/tuomasleppanen/.claude/hooks/gsd-context-monitor.js\""
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/tuomasleppanen/.claude/hooks/claude-config-backup.js\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node \"/Users/tuomasleppanen/.claude/hooks/gsd-statusline.js\""
+  }
+}
