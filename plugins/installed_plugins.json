@@ -4,10 +4,10 @@
     "playground@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/78497c524da3",
-        "version": "78497c524da3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/6b70f99f769f",
+        "version": "6b70f99f769f",
         "installedAt": "2026-02-18T13:52:16.082Z",
-        "lastUpdated": "2026-03-17T06:27:58.051Z",
+        "lastUpdated": "2026-03-18T06:31:44.469Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
@@ -34,30 +34,30 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/78497c524da3",
-        "version": "78497c524da3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/6b70f99f769f",
+        "version": "6b70f99f769f",
         "installedAt": "2026-03-07T20:47:20.383Z",
-        "lastUpdated": "2026-03-17T06:27:58.004Z",
+        "lastUpdated": "2026-03-18T06:31:44.465Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/code-review/78497c524da3",
-        "version": "78497c524da3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/code-review/6b70f99f769f",
+        "version": "6b70f99f769f",
         "installedAt": "2026-03-07T20:47:20.430Z",
-        "lastUpdated": "2026-03-17T06:27:57.995Z",
+        "lastUpdated": "2026-03-18T06:31:44.472Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "feature-dev@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/feature-dev/78497c524da3",
-        "version": "78497c524da3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/feature-dev/6b70f99f769f",
+        "version": "6b70f99f769f",
         "installedAt": "2026-03-07T20:47:20.486Z",
-        "lastUpdated": "2026-03-17T06:27:58.024Z",
+        "lastUpdated": "2026-03-18T06:31:44.470Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
@@ -74,30 +74,30 @@
     "ralph-loop@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/ralph-loop/78497c524da3",
-        "version": "78497c524da3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/ralph-loop/6b70f99f769f",
+        "version": "6b70f99f769f",
         "installedAt": "2026-03-07T20:47:20.577Z",
-        "lastUpdated": "2026-03-17T06:27:58.067Z",
+        "lastUpdated": "2026-03-18T06:31:44.467Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/78497c524da3",
-        "version": "78497c524da3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/6b70f99f769f",
+        "version": "6b70f99f769f",
         "installedAt": "2026-03-07T20:47:20.603Z",
-        "lastUpdated": "2026-03-17T06:27:57.833Z",
+        "lastUpdated": "2026-03-18T06:31:44.474Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "security-guidance@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/security-guidance/78497c524da3",
-        "version": "78497c524da3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/security-guidance/6b70f99f769f",
+        "version": "6b70f99f769f",
         "installedAt": "2026-03-07T20:47:20.646Z",
-        "lastUpdated": "2026-03-17T06:27:57.867Z",
+        "lastUpdated": "2026-03-18T06:31:44.471Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
