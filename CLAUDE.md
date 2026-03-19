@@ -14,6 +14,15 @@
 
 ## Scope Discipline
 - Never perform actions beyond what the user explicitly asked for. When in doubt, ask first.
+- Don't ask permission for in-project or non-destructive actions — just do them.
+- Evaluate `$()` substitutions yourself before asking; only flag if genuinely dangerous.
+
+## Shell habits
+- Never use `cd` before commands — use `--prefix`, `--directory`, or absolute paths instead.
+- Don't chain commands with `&` operator — causes unnecessary permission prompts.
+
+## Platform
+- Intel Mac, Anthropic Max plan (no API key). Python 3.13 pinned. Moving to M-chip soon.
 
 ## Plan Mode
 - Make the plan extremely concise. Sacrifice grammar for the sake of concision.
