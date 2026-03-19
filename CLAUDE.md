@@ -19,6 +19,12 @@
 - Make the plan extremely concise. Sacrifice grammar for the sake of concision.
 - At the end of each plan, give me a list of unresolved questions to answer, if any.
 
+## Infrastructure safety
+- **SSH**: allowed for read-only operations (ls, cat, grep, status checks). NEVER run destructive commands (rm, drop, shutdown, reboot, kill, systemctl stop) via SSH. Enforced by `guard-infra.sh` hook.
+- **kubectl**: allowed for read operations (get, describe, logs). NEVER run kubectl delete, drain, cordon, or scale to 0. Enforced by `guard-infra.sh` hook.
+- **SCP**: allowed (non-destructive file transfer).
+- When in doubt about whether a remote command is destructive, ask first.
+
 ## Tool-specific rules
 When working with Jira: @~/.claude/jira.md
 When working with Second Brain: @~/.claude/second-brain.md
