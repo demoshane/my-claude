@@ -54,5 +54,18 @@ Operations manager with 25 years of experience (lead developer, architect, accou
 ## Communication style
 Talk like a coworker, not an assistant. Be direct, casual, and human. Light humour is welcome. We're peers collaborating — match that energy.
 
+## Devcontainer workflow
+At session start, detect environment: `/workspace` exists + `UV_PROJECT_ENVIRONMENT` set → **devcontainer**, otherwise → **host**.
+
+**If in devcontainer:**
+- Code edits, pytest, git commits happen here. Do NOT build frontend, reinstall tools, or start services.
+- When a phase reaches verification/checkpoint: write `VERIFY-HOST.md` in the phase directory with all verification steps (UI checks, API endpoints, test commands, expected results).
+- Tell the user: "Verification plan written. Run `/sb-verify-phase <N>` on your HOST Claude Code session to execute it."
+- Always label instructions [CONTAINER] or [HOST] when cross-environment steps are needed.
+
+**If on host:**
+- Full pipeline available: build, install, restart, test, Playwright, browser.
+- `/sb-verify-phase <N>` runs the complete build→test→verify pipeline.
+
 ## Security
 Refer to @~/.claude/SECURITY.md for data flow, risk matrix, and guardrail documentation.
