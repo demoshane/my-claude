@@ -28,3 +28,6 @@
 ## Tool-specific rules
 When working with Jira: @~/.claude/jira.md
 When working with Second Brain: @~/.claude/second-brain.md
+
+## Security
+Refer to @~/.claude/SECURITY.md for data flow, risk matrix, and guardrail documentation.
