@@ -71,7 +71,7 @@
     "playwright@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
-    "php-lsp@claude-plugins-official": true,
+    "php-lsp@claude-plugins-official": false,
     "semgrep@claude-plugins-official": true,
     "accessibility-compliance@claude-code-workflows": true,
     "agent-orchestration@claude-code-workflows": true,
