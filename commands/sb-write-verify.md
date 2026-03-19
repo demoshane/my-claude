@@ -39,6 +39,15 @@ Phase: <name>
 ## Manual Checks (if Playwright can't verify)
 - [fallback checks]
 
+## Human Verification (presented to user after all automated checks pass)
+These are checks that require human judgement — visual quality, UX feel, data correctness.
+Present these as a numbered checklist the user can walk through in their browser.
+
+- [ ] [description of what to look at and what "correct" looks like]
+- [ ] [e.g., "Open Links tab → verify link cards show title, domain, date, description"]
+- [ ] [e.g., "Click a link row → detail panel opens with Visit Link button"]
+- [ ] [e.g., "Click Visit Link → browser opens the correct URL"]
+
 ## Expected Results
 - [what success looks like for each plan]
 ```

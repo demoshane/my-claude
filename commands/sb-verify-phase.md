@@ -61,8 +61,18 @@ Present a clear summary:
   - Plan N-01: PASS/FAIL — details
   - Plan N-02: PASS/FAIL — details
 ### Screenshots: [attached]
+
+### Human Verification Checklist
+(Presented only after all automated checks pass)
+- [ ] Check 1...
+- [ ] Check 2...
+
 ### Overall: VERIFIED / NEEDS FIXES
 ```
+
+6. **After all automated steps pass**: read the "Human Verification" section from VERIFY-HOST.md
+   and present it to the user as a numbered checklist they can walk through in their browser.
+   Only present this after automated checks succeed — don't waste the user's time if tests are failing.
 
 ## Important
 - Always use `source "$HOME/.nvm/nvm.sh"` before npm commands (nvm not auto-loaded)
