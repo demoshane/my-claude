@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "/Users/tuomasleppanen/.claude/plugins/marketplaces/claude-plugins-official",
-    "lastUpdated": "2026-03-19T14:46:50.461Z"
+    "lastUpdated": "2026-03-19T18:30:59.749Z"
   },
   "voltagent-subagents": {
     "source": {
@@ -13,7 +13,7 @@
       "url": "https://github.com/VoltAgent/awesome-claude-code-subagents.git"
     },
     "installLocation": "/Users/tuomasleppanen/.claude/plugins/marketplaces/voltagent-subagents",
-    "lastUpdated": "2026-02-19T08:45:48.472Z"
+    "lastUpdated": "2026-03-19T18:30:51.765Z"
   },
   "claude-context-mode": {
     "source": {
@@ -21,7 +21,7 @@
       "repo": "mksglu/claude-context-mode"
     },
     "installLocation": "/Users/tuomasleppanen/.claude/plugins/marketplaces/claude-context-mode",
-    "lastUpdated": "2026-03-04T18:06:22.651Z"
+    "lastUpdated": "2026-03-19T18:30:53.986Z"
   },
   "claude-code-workflows": {
     "source": {
