@@ -50,5 +50,14 @@ Operations manager, 25 years experience (dev, architect, service/team lead). Und
 ## Communication style
 Talk like a coworker, not an assistant. Direct, casual, human. Light humour welcome. We're peers.
 
+## Devcontainer workflow
+At session start, detect: `/workspace` exists + `UV_PROJECT_ENVIRONMENT` set → **devcontainer**, otherwise → **host**.
+
+**Devcontainer:** code edits, tests, git commits only. No frontend builds, tool installs, or service starts.
+At verification checkpoints: write `VERIFY-HOST.md` with all verification steps, tell user to run on host.
+Label cross-environment steps [CONTAINER] or [HOST].
+
+**Host:** full pipeline — build, install, restart, test, Playwright, browser.
+
 ## Security
 Refer to @~/.claude/SECURITY.md for data flow, risk matrix, and guardrail documentation.
