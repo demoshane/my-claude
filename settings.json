@@ -95,5 +95,6 @@
         "repo": "wshobson/agents"
       }
     }
-  }
+  },
+  "skipDangerousModePermissionPrompt": true
 }
