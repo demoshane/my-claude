@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // claude-config-backup-session.js — SessionStart hook
 // Syncs ~/.claude config with GitHub on session start:
-//   1. Pull remote changes (rebase) to get updates from other machines
-//   2. Commit + push any local changes made outside of Claude's tool calls
-//      (e.g. plugin installs, app-level settings changes)
+//   1. Commit any local out-of-band changes (plugin installs, etc.)
+//   2. Check if remote has changes — INFORM user, don't auto-pull
+//   3. Push local commits if any
 
 const { spawnSync } = require('child_process');
 
@@ -24,30 +24,42 @@ process.stdin.on('data', chunk => input += chunk);
 process.stdin.on('end', () => {
   clearTimeout(stdinTimeout);
   try {
-    // 1. Stage any local changes first (so stash/rebase doesn't discard them)
+    // 1. Commit any local changes first — never lose out-of-band work
     git('add', '-A');
     const status = git('status', '--porcelain');
     const hasLocalChanges = status.stdout && status.stdout.trim();
 
     if (hasLocalChanges) {
-      // Stash local changes, pull, then re-apply
-      git('stash', '--include-untracked');
-      git('pull', '--rebase', 'origin', 'main');
-      const pop = git('stash', 'pop');
-      // If stash pop fails (conflict), abort and leave for manual resolution
-      if (pop.status !== 0) {
-        git('stash', 'drop');
-      }
-      // Re-stage after stash pop
-      git('add', '-A');
-      const statusAfter = git('status', '--porcelain');
-      if (statusAfter.stdout && statusAfter.stdout.trim()) {
-        git('commit', '-m', 'backup: session start — sync out-of-band changes');
-        git('push', '-u', 'origin', 'HEAD');
-      }
-    } else {
-      // No local changes — just pull
-      git('pull', '--rebase', 'origin', 'main');
+      git('commit', '-m', 'backup: session start — sync out-of-band changes');
+    }
+
+    // 2. Fetch remote (don't merge/pull)
+    const fetch = git('fetch', 'origin', 'main');
+    if (fetch.status !== 0) {
+      // Offline or fetch failed — just push local if we have changes
+      if (hasLocalChanges) git('push', '-u', 'origin', 'HEAD');
+      process.exit(0);
+    }
+
+    // 3. Check if remote is ahead
+    const behind = git('rev-list', '--count', 'HEAD..origin/main');
+    const behindCount = parseInt((behind.stdout || '').trim(), 10) || 0;
+
+    // 4. Push local commits if any
+    if (hasLocalChanges) {
+      git('push', '-u', 'origin', 'HEAD');
+    }
+
+    // 5. If remote has changes, inform via stderr (shows in hook output)
+    if (behindCount > 0) {
+      const remoteLog = git('log', '--oneline', 'HEAD..origin/main');
+      const changes = (remoteLog.stdout || '').trim();
+      process.stderr.write(
+        `\n⚠️  ~/.claude remote has ${behindCount} new commit(s):\n` +
+        `${changes}\n\n` +
+        `Run: git -C ~/.claude pull --rebase origin main\n` +
+        `(Check for local changes first with: git -C ~/.claude status)\n\n`
+      );
     }
   } catch (e) {
     // Silent fail — never block session start

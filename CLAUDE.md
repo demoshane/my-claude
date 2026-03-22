@@ -9,7 +9,10 @@
 - Never use Bash for commands producing >20 lines. Use `mcp__plugin_context-mode_context-mode__batch_execute` or `execute_file`.
 
 ## Learning Habit
-- After each fix confirmed working: extract root cause and write to project MEMORY.md or LEARNINGS.md. Never repeat the same mistake twice.
+- After a fix: only write a learning if the rule is **universally applicable** to future work AND not already covered by CLAUDE.md. One-time bugs and generic coding mistakes belong in git history.
+- **Truly universal** (applies to any project) → `~/.claude/LEARNINGS.md`
+- **Project-universal** (applies to all future work in that project) → project's `.claude/LEARNINGS.md`
+- Be strict — both files have a 40-line / 80-line cap respectively. If full, replace the least valuable entry.
 
 ## Scope Discipline
 - Never perform actions beyond what the user explicitly asked for. When in doubt, ask first.

@@ -3,7 +3,8 @@
 // Auto-commits and pushes ~/.claude config files to git when they change.
 // Pulls with rebase before pushing to stay in sync across multiple machines.
 //
-// Watched: CLAUDE.md, *.md, settings.json, hooks/*.js, package.json, .gitignore
+// Watched: CLAUDE.md, *.md, settings.json, hooks/*.js, package.json, .gitignore,
+//          get-shit-done/**, commands/gsd/**, agents/gsd-*
 // Ignored: runtime dirs (projects/, sessions/, plans/, etc.)
 
 const { spawnSync } = require('child_process');
@@ -20,6 +21,9 @@ const TRACKED_PATTERNS = [
   /^package\.json$/,
   /^\.gitignore$/,
   /^hooks\/[^/]+\.js$/,
+  /^get-shit-done\//,
+  /^commands\/gsd\//,
+  /^agents\/gsd-/,
 ];
 
 function isTracked(filePath) {
@@ -46,17 +50,30 @@ process.stdin.on('end', () => {
     const toolName = data.tool_name || data.tool || '';
     const toolInput = data.tool_input || data.input || {};
 
-    if (!['Write', 'Edit', 'MultiEdit'].includes(toolName)) process.exit(0);
+    // For Write/Edit/MultiEdit: check if changed files are tracked
+    if (['Write', 'Edit', 'MultiEdit'].includes(toolName)) {
+      const filePaths = toolName === 'MultiEdit'
+        ? (toolInput.edits || []).map(e => e.file_path).filter(Boolean)
+        : [toolInput.file_path].filter(Boolean);
 
-    const filePaths = toolName === 'MultiEdit'
-      ? (toolInput.edits || []).map(e => e.file_path).filter(Boolean)
-      : [toolInput.file_path].filter(Boolean);
+      const trackedFiles = filePaths.filter(isTracked);
+      if (trackedFiles.length === 0) process.exit(0);
 
-    const trackedFiles = filePaths.filter(isTracked);
-    if (trackedFiles.length === 0) process.exit(0);
-
-    for (const f of trackedFiles) {
-      git('add', f);
+      for (const f of trackedFiles) {
+        git('add', f);
+      }
+    }
+    // For Bash: check if npx get-shit-done-cc ran (GSD install/update)
+    else if (toolName === 'Bash') {
+      const cmd = toolInput.command || '';
+      if (!cmd.includes('get-shit-done-cc')) process.exit(0);
+      // Stage all GSD-related changes
+      git('add', 'get-shit-done/');
+      git('add', 'commands/gsd/');
+      git('add', 'agents/');  // git add ignores if path doesn't exist
+    }
+    else {
+      process.exit(0);
     }
 
     const status = git('status', '--porcelain');
