@@ -14,6 +14,11 @@
 - **Project-universal** (applies to all future work in that project) → project's `.claude/LEARNINGS.md`
 - Be strict — both files have a 40-line / 80-line cap respectively. If full, replace the least valuable entry.
 
+## Memory hygiene
+- Before saving a memory, check if the content is already covered by any CLAUDE.md file. If so, don't save — CLAUDE.md is the source of truth.
+- When feedback gets promoted into CLAUDE.md, delete the corresponding memory file and remove it from MEMORY.md.
+- After completing a milestone, review and prune `project`-type memories — most become stale once the work ships.
+
 ## Scope Discipline
 - Never perform actions beyond what the user explicitly asked for. When in doubt, ask first.
 - Don't ask permission for in-project or non-destructive actions — just do them.
