@@ -7,11 +7,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-02-18T13:52:16.082Z",
-<<<<<<< Updated upstream
         "lastUpdated": "2026-03-22T19:02:23.240Z",
-=======
-        "lastUpdated": "2026-03-22T19:01:20.561Z",
->>>>>>> Stashed changes
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
@@ -41,11 +37,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.383Z",
-<<<<<<< Updated upstream
         "lastUpdated": "2026-03-22T19:02:23.177Z",
-=======
-        "lastUpdated": "2026-03-22T19:01:20.614Z",
->>>>>>> Stashed changes
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
@@ -55,11 +47,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/code-review/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.430Z",
-<<<<<<< Updated upstream
         "lastUpdated": "2026-03-22T19:02:23.211Z",
-=======
-        "lastUpdated": "2026-03-22T19:01:20.642Z",
->>>>>>> Stashed changes
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
@@ -69,11 +57,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/feature-dev/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.486Z",
-<<<<<<< Updated upstream
         "lastUpdated": "2026-03-22T19:02:23.256Z",
-=======
-        "lastUpdated": "2026-03-22T19:01:20.609Z",
->>>>>>> Stashed changes
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
@@ -93,11 +77,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/ralph-loop/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.577Z",
-<<<<<<< Updated upstream
         "lastUpdated": "2026-03-22T19:02:22.376Z",
-=======
-        "lastUpdated": "2026-03-22T19:01:20.645Z",
->>>>>>> Stashed changes
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
@@ -107,11 +87,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.603Z",
-<<<<<<< Updated upstream
         "lastUpdated": "2026-03-22T19:02:23.188Z",
-=======
-        "lastUpdated": "2026-03-22T19:01:20.600Z",
->>>>>>> Stashed changes
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
@@ -121,11 +97,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/security-guidance/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.646Z",
-<<<<<<< Updated upstream
         "lastUpdated": "2026-03-22T19:02:23.251Z",
-=======
-        "lastUpdated": "2026-03-22T19:01:20.571Z",
->>>>>>> Stashed changes
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
