@@ -34,6 +34,16 @@
             "command": "/Users/tuomasleppanen/.claude/hooks/guard-infra.sh"
           }
         ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/tuomasleppanen/.claude/hooks/gsd-prompt-guard.js\"",
+            "timeout": 5
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -41,9 +51,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"/Users/tuomasleppanen/.claude/hooks/gsd-context-monitor.js\""
+            "command": "node \"/Users/tuomasleppanen/.claude/hooks/gsd-context-monitor.js\"",
+            "timeout": 10
           }
-        ]
+        ],
+        "matcher": "Bash|Edit|Write|MultiEdit|Agent|Task"
       },
       {
         "hooks": [
