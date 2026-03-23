@@ -4,12 +4,12 @@
     "playground@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-02-18T13:52:16.082Z",
         "lastUpdated": "2026-03-22T22:27:02.396Z",
-        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88",
-        "projectPath": "/Users/tuomasleppanen/second-brain"
+        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
     "voltagent-biz@voltagent-subagents": [
@@ -35,23 +35,23 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.383Z",
         "lastUpdated": "2026-03-22T22:27:02.396Z",
-        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1",
-        "projectPath": "/Users/tuomasleppanen/second-brain"
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "ralph-loop@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/ralph-loop/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.577Z",
-        "lastUpdated": "2026-03-22T22:27:02.396Z",
-        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1",
-        "projectPath": "/Users/tuomasleppanen/second-brain"
+        "lastUpdated": "2026-03-23T09:24:29.343Z",
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "playwright@claude-plugins-official": [
@@ -60,7 +60,7 @@
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/61c0597779bd",
         "version": "61c0597779bd",
         "installedAt": "2026-03-07T20:47:20.603Z",
-        "lastUpdated": "2026-03-22T19:02:23.188Z",
+        "lastUpdated": "2026-03-23T09:24:29.342Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
@@ -187,12 +187,12 @@
     "typescript-lsp@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
         "version": "1.0.0",
         "installedAt": "2026-03-07T20:51:54.978Z",
         "lastUpdated": "2026-03-22T22:27:02.396Z",
-        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1",
-        "projectPath": "/Users/tuomasleppanen/second-brain"
+        "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "comprehensive-review@claude-code-workflows": [
@@ -248,12 +248,12 @@
     "code-simplifier@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0",
         "version": "1.0.0",
         "installedAt": "2026-03-22T22:27:02.396Z",
         "lastUpdated": "2026-03-22T22:27:02.396Z",
-        "gitCommitSha": "61c0597779bd2d670dcd4fbbf37c66aa19eb2ce6",
-        "projectPath": "/Users/tuomasleppanen/second-brain"
+        "gitCommitSha": "61c0597779bd2d670dcd4fbbf37c66aa19eb2ce6"
       }
     ]
   }
