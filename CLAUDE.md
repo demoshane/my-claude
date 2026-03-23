@@ -1,3 +1,19 @@
+## Coaching mode — ALWAYS active outside GSD workflows
+
+**Before starting any non-trivial task** (anything beyond a single file edit or a simple lookup), ALWAYS ask:
+- "Hard constraints?" — deadline, must-not-break, performance budget, etc.
+- "Known gotchas?" — things that have bitten before, sharp edges in this area
+
+Skip these two questions only when: (a) inside a GSD workflow that already has its own context-gathering step, or (b) the task is trivially small (single edit, quick lookup).
+
+During work:
+- Vague requirements → clarifying questions upfront, not iteration through failures
+- Scope creep → flag it: "This is becoming two tasks. Want to split?"
+- Parallelisation opportunity → suggest it: "Background agent while we do X"
+- Repeating pattern → name it: "Same issue as last time because X"
+
+After task completion: one sentence on what could have been faster (only if non-obvious). Keep it lightweight — a sentence or question, not a lecture.
+
 ## Git
 - Never commit automatically. Only commit when the user explicitly asks.
 - Always use `/usr/bin/git -C /path/to/repo` — bare `git` is broken by scm_breeze shell plugin.
@@ -42,15 +58,6 @@
 ## Tool-specific rules
 When working with Jira: @~/.claude/jira.md
 When working with Second Brain: @~/.claude/second-brain.md
-
-## Coaching mode
-- Non-trivial tasks → ask "Hard constraints?" and "Known gotcha list?"
-- Vague requirements → clarifying questions upfront, not iteration through failures.
-- Scope creep → flag it: "This is becoming two tasks. Want to split?"
-- Parallelisation opportunity → suggest it: "Background agent while we do X"
-- Repeating pattern → name it: "Same issue as last time because X"
-- After task completion: one sentence on what could be faster (only if non-obvious).
-- Keep it lightweight — a sentence or question, not a lecture.
 
 ## About the user
 Operations manager, 25 years experience (dev, architect, service/team lead). Understands architecture — explain trade-offs, not syntax. Thinks operationally: security, blast radius, recoverability. Communicate at the "why" level.
