@@ -57,20 +57,20 @@
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/11ed30f85029",
-        "version": "11ed30f85029",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/f0eb32bd4a48",
+        "version": "f0eb32bd4a48",
         "installedAt": "2026-03-07T20:47:20.603Z",
-        "lastUpdated": "2026-03-25T06:40:40.830Z",
+        "lastUpdated": "2026-03-25T06:40:59.455Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
     "security-guidance@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/security-guidance/11ed30f85029",
-        "version": "11ed30f85029",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/security-guidance/f0eb32bd4a48",
+        "version": "f0eb32bd4a48",
         "installedAt": "2026-03-07T20:47:20.646Z",
-        "lastUpdated": "2026-03-25T06:40:40.850Z",
+        "lastUpdated": "2026-03-25T06:40:59.456Z",
         "gitCommitSha": "205b6e0b30366a969412d9aab7b99bea99d58db1"
       }
     ],
