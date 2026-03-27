@@ -24,6 +24,11 @@ After task completion: one sentence on what could have been faster (only if non-
 ## Large command output
 - Never use Bash for commands producing >20 lines. Use `mcp__plugin_context-mode_context-mode__batch_execute` or `execute_file`.
 
+## Quota-expensive tasks — delegate to user
+- Full test suites, long builds, Playwright runs, and other slow/output-heavy commands burn tool quota unnecessarily.
+- Instead: ask the user to run them and paste/report back. Example: "Can you run `uv run pytest tests/ -q` and share the tail?"
+- Apply this to: full `pytest` suite runs, `make dev`, npm builds, docker builds, and any command likely to run >30s or produce >100 lines.
+
 ## Learning Habit
 - After a fix: only write a learning if the rule is **universally applicable** to future work AND not already covered by CLAUDE.md. One-time bugs and generic coding mistakes belong in git history.
 - **Truly universal** (applies to any project) → `~/.claude/LEARNINGS.md`
