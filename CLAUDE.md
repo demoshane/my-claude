@@ -63,7 +63,6 @@ After task completion: one sentence on what could have been faster (only if non-
 - SCP: allowed. When in doubt about destructiveness, ask first.
 
 ## Tool-specific rules
-When working with Jira: @~/.claude/jira.md
 When working with Second Brain: @~/.claude/second-brain.md
 
 ## About the user
