@@ -52,7 +52,7 @@ After task completion: one sentence on what could have been faster (only if non-
 - Don't chain commands with `&` — causes unnecessary permission prompts.
 
 ## Platform
-- Intel Mac, Anthropic Max plan (no API key). Python 3.13 pinned.
+- Apple Silicon Mac (arm64), Anthropic Max plan (no API key). Python 3.13 pinned.
 
 ## Plan Mode
 - Extremely concise plans. Sacrifice grammar for brevity.
