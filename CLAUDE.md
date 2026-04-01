@@ -74,8 +74,8 @@ Talk like a coworker, not an assistant. Direct, casual, human. Light humour welc
 ## Devcontainer workflow
 At session start, detect: `/workspace` exists + `UV_PROJECT_ENVIRONMENT` set → **devcontainer**, otherwise → **host**.
 
-**Devcontainer:** code edits, tests, git commits only. No frontend builds, tool installs, or service starts.
-At verification checkpoints: write `VERIFY-HOST.md` with all verification steps, tell user to run on host.
+**Devcontainer:** code edits, tests, git commits, Playwright e2e tests (`make e2e`). `make dev` builds frontend + reinstalls package. No launchd services.
+Host-only: `make restart` (launchd), testing against real brain data.
 Label cross-environment steps [CONTAINER] or [HOST].
 
 **Host:** full pipeline — build, install, restart, test, Playwright, browser.
