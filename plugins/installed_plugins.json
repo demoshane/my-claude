@@ -14,21 +14,21 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/7ed523140f50",
         "version": "7ed523140f50",
         "installedAt": "2026-04-11T12:53:43.485Z",
         "lastUpdated": "2026-04-11T12:55:24.340Z",
-        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673",
-        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson"
+        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/7ed523140f50",
-        "version": "7ed523140f50",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/fd0d36ab438d",
+        "version": "fd0d36ab438d",
         "installedAt": "2026-04-11T12:53:57.303Z",
-        "lastUpdated": "2026-04-11T12:53:57.303Z",
+        "lastUpdated": "2026-04-11T19:16:46.875Z",
         "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
@@ -55,12 +55,12 @@
     "typescript-lsp@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
         "version": "1.0.0",
         "installedAt": "2026-04-11T12:54:11.531Z",
         "lastUpdated": "2026-04-11T12:55:24.340Z",
-        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673",
-        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson"
+        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
     "semgrep@claude-plugins-official": [
@@ -76,34 +76,34 @@
     "ralph-loop@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/ralph-loop/1.0.0",
         "version": "1.0.0",
         "installedAt": "2026-04-11T12:55:24.340Z",
         "lastUpdated": "2026-04-11T12:55:24.340Z",
-        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673",
-        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson"
+        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
     "code-simplifier@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0",
         "version": "1.0.0",
         "installedAt": "2026-04-11T12:55:24.340Z",
         "lastUpdated": "2026-04-11T12:55:24.340Z",
-        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673",
-        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson"
+        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
     "playground@claude-plugins-official": [
       {
         "scope": "local",
+        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson",
         "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/7ed523140f50",
         "version": "7ed523140f50",
         "installedAt": "2026-04-11T12:55:24.340Z",
         "lastUpdated": "2026-04-11T12:55:24.340Z",
-        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673",
-        "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson"
+        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ]
   }
