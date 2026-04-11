@@ -75,10 +75,24 @@
     "frontend-design@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
-    "php-lsp@claude-plugins-official": false,
-    "semgrep@claude-plugins-official": false,
-    "typescript-lsp@claude-plugins-official": true
+    "php-lsp@claude-plugins-official": true,
+    "semgrep@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "claude-mem@thedotmack": true
   },
-  "extraKnownMarketplaces": {},
+  "extraKnownMarketplaces": {
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-public"
+      }
+    }
+  },
   "skipDangerousModePermissionPrompt": true
 }
