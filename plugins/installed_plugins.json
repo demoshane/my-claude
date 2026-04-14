@@ -25,10 +25,10 @@
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/cff62ec143e3",
-        "version": "cff62ec143e3",
+        "installPath": "/home/node/.claude/plugins/cache/claude-plugins-official/playwright/6f64d5f3afb9",
+        "version": "6f64d5f3afb9",
         "installedAt": "2026-04-11T12:53:57.303Z",
-        "lastUpdated": "2026-04-13T12:35:31.274Z",
+        "lastUpdated": "2026-04-13T13:59:46.113Z",
         "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
