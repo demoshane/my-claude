@@ -82,3 +82,6 @@ Label cross-environment steps [CONTAINER] or [HOST].
 
 ## Security
 Refer to @~/.claude/SECURITY.md for data flow, risk matrix, and guardrail documentation.
+# graphify
+- **graphify** (`~/.claude/skills/graphify/SKILL.md`) - any input to knowledge graph. Trigger: `/graphify`
+When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.
