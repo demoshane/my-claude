@@ -62,23 +62,11 @@ After task completion: one sentence on what could have been faster (only if non-
 - SSH/kubectl: read-only only. Destructive commands blocked by `guard-infra.sh` hook.
 - SCP: allowed. When in doubt about destructiveness, ask first.
 
-## Tool-specific rules
-When working with Second Brain: @~/.claude/second-brain.md
-
 ## About the user
 Operations manager, 25 years experience (dev, architect, service/team lead). Understands architecture — explain trade-offs, not syntax. Thinks operationally: security, blast radius, recoverability. Communicate at the "why" level.
 
 ## Communication style
 Talk like a coworker, not an assistant. Direct, casual, human. Light humour welcome. We're peers.
-
-## Devcontainer workflow
-At session start, detect: `/workspace` exists + `UV_PROJECT_ENVIRONMENT` set → **devcontainer**, otherwise → **host**.
-
-**Devcontainer:** code edits, tests, git commits, Playwright e2e tests (`make e2e`). `make dev` builds frontend + reinstalls package. No launchd services.
-Host-only: `make restart` (launchd), testing against real brain data.
-Label cross-environment steps [CONTAINER] or [HOST].
-
-**Host:** full pipeline — build, install, restart, test, Playwright, browser.
 
 ## Security
 Refer to @~/.claude/SECURITY.md for data flow, risk matrix, and guardrail documentation.
