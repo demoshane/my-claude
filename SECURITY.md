@@ -41,7 +41,7 @@ Claude Code (local) → Anthropic API (cloud) → MCP proxy (Anthropic-hosted) �
 - Read-only operations always allowed
 
 ### `guard-harvest.sh` (PreToolUse)
-- Blocks any `mcp__harvest__*` tool whose name contains delete/remove/destroy
+- Blocks any `mcp__harvest__*` tool whose name contains delete/remove/destroy/unassign (unassign tears down a project assignment but dodges the other substrings)
 - Blocks HTTP DELETE via any generic Harvest request tool
 - Read and non-destructive create/edit operations allowed
 

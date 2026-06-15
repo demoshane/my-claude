@@ -25,8 +25,10 @@ case "$TOOL_NAME" in
     *) exit 0 ;;
 esac
 
-# Block: any delete/remove/destroy operation by tool name
-if printf '%s' "$TOOL_NAME" | grep -qiE '(delete|remove|destroy)'; then
+# Block: any delete/remove/destroy/unassign operation by tool name.
+# 'unassign' is destructive in effect (tears down a project assignment) but
+# its name avoids the delete/remove/destroy substrings — match it explicitly.
+if printf '%s' "$TOOL_NAME" | grep -qiE '(delete|remove|destroy|unassign)'; then
     echo '{"decision": "block", "reason": "BLOCKED: Delete actions via the Harvest MCP are forbidden. Harvest holds production time-tracking data. Read and non-destructive create/edit operations are allowed. This is a global safety rule."}'
     exit 2
 fi
