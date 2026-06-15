@@ -1,6 +1,6 @@
 # Claude Code — Security Best Practices
 
-Last updated: 2026-03-19
+Last updated: 2026-06-15
 
 Global security rules and awareness for all projects using Claude Code.
 
@@ -19,6 +19,7 @@ Claude Code (local) → Anthropic API (cloud) → MCP proxy (Anthropic-hosted) �
 1. **Jira** — can create/edit issues, transition status, add comments. Protected by `guard-jira.sh` hook.
 2. **Google Calendar** — can create/update/delete events.
 3. **Miro** — can create/modify boards, documents, tables, diagrams.
+4. **Harvest** — can create/edit/delete time entries, clients, projects, invoices (production time-tracking data). Connected directly via HTTP transport (`https://api.harvestapp.com/mcp`), not the Anthropic MCP proxy. Delete actions blocked by `guard-harvest.sh` hook.
 
 ### Read-only systems
 
@@ -38,6 +39,13 @@ Claude Code (local) → Anthropic API (cloud) → MCP proxy (Anthropic-hosted) �
 - kubectl: blocks delete, drain, cordon, scale-to-0
 - SCP: allowed (non-destructive)
 - Read-only operations always allowed
+
+### `guard-harvest.sh` (PreToolUse)
+- Blocks any `mcp__harvest__*` tool whose name contains delete/remove/destroy
+- Blocks HTTP DELETE via any generic Harvest request tool
+- Read and non-destructive create/edit operations allowed
+
+> **Note:** all three guards read the hook payload as JSON on **stdin** (`tool_name`/`tool_input`), with a fallback to the legacy `CLAUDE_TOOL_NAME`/`CLAUDE_TOOL_INPUT` env vars. The env-var-only form is a silent no-op in current Claude Code — keep new guards on stdin.
 
 ---
 
@@ -60,7 +68,7 @@ Claude Code (local) → Anthropic API (cloud) → MCP proxy (Anthropic-hosted) �
 ## 5. Recommendations
 
 1. Run development in devcontainer by default — guardrail hooks are active there
-2. Never use `--dangerously-skip-permissions` when Jira/Calendar MCP servers are connected outside devcontainer
+2. Never use `--dangerously-skip-permissions` when Jira/Calendar/Harvest MCP servers are connected outside devcontainer
 3. Review Anthropic's data retention policy quarterly
 4. Keep production credentials out of any path accessible to Claude Code
 5. Use `sb-forget` two-step token pattern for any destructive operations on brain data

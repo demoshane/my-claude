@@ -36,6 +36,14 @@
         ]
       },
       {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/tuomasleppanen/.claude/hooks/guard-harvest.sh"
+          }
+        ]
+      },
+      {
         "matcher": "Write|Edit",
         "hooks": [
           {

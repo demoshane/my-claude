@@ -4,8 +4,19 @@
 # Allows: read-only and non-destructive operations
 set -euo pipefail
 
+# Current Claude Code passes hook payload as JSON on stdin. Older convention
+# used CLAUDE_TOOL_NAME / CLAUDE_TOOL_INPUT env vars — honour both.
+INPUT="$(cat 2>/dev/null || true)"
+
 TOOL_NAME="${CLAUDE_TOOL_NAME:-}"
-TOOL_INPUT="${CLAUDE_TOOL_INPUT:-}"
+if [ -z "$TOOL_NAME" ] && [ -n "$INPUT" ]; then
+    TOOL_NAME="$(printf '%s' "$INPUT" \
+        | grep -oE '"tool_name"[[:space:]]*:[[:space:]]*"[^"]*"' \
+        | head -1 \
+        | sed -E 's/.*:[[:space:]]*"([^"]*)"/\1/')"
+fi
+
+TOOL_INPUT="${CLAUDE_TOOL_INPUT:-$INPUT}"
 
 # Only check Bash tool
 [ "$TOOL_NAME" = "Bash" ] || exit 0
