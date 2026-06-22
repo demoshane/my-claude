@@ -25,11 +25,11 @@
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/ec696078dbb0",
-        "version": "ec696078dbb0",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/5a14fa57f4fc",
+        "version": "5a14fa57f4fc",
         "installedAt": "2026-04-11T12:53:57.303Z",
-        "lastUpdated": "2026-06-17T08:49:07.796Z",
-        "gitCommitSha": "ec696078dbb0ca919ada1319f397d8324518cf14"
+        "lastUpdated": "2026-06-17T09:07:36.575Z",
+        "gitCommitSha": "5a14fa57f4fcd32a1697278236ee8520d5bb8b4c"
       }
     ],
     "claude-md-management@claude-plugins-official": [
@@ -66,11 +66,11 @@
     "semgrep@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/semgrep/0.5.3",
-        "version": "0.5.3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/semgrep/2.0.1",
+        "version": "2.0.1",
         "installedAt": "2026-04-11T12:54:19.429Z",
-        "lastUpdated": "2026-04-11T12:54:19.429Z",
-        "gitCommitSha": "b5bab16514897d36de10ebb14ebd5437095d9b9d"
+        "lastUpdated": "2026-06-22T01:40:44.618Z",
+        "gitCommitSha": "18771d9a7f78b0cb15711ad759ab253b20aeb45d"
       }
     ],
     "ralph-loop@claude-plugins-official": [
