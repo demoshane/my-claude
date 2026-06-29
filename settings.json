@@ -111,6 +111,7 @@
       }
     }
   },
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "tui": "fullscreen"
+  "model": "sonnet"
 }
