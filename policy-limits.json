@@ -7,6 +7,5 @@
       "allowed": false
     }
   },
-  "compliance_taints": [],
-  "defaults": {}
+  "compliance_taints": []
 }
