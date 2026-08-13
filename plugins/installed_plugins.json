@@ -20,6 +20,14 @@
         "installedAt": "2026-04-11T12:53:43.485Z",
         "lastUpdated": "2026-04-11T12:55:24.340Z",
         "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
+      },
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/7ed523140f50",
+        "version": "7ed523140f50",
+        "installedAt": "2026-08-12T12:00:09.855Z",
+        "lastUpdated": "2026-08-12T12:00:09.855Z",
+        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
     "playwright@claude-plugins-official": [
@@ -60,6 +68,14 @@
         "version": "1.0.0",
         "installedAt": "2026-04-11T12:54:11.531Z",
         "lastUpdated": "2026-04-11T12:55:24.340Z",
+        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
+      },
+      {
+        "scope": "user",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-08-12T12:00:09.855Z",
+        "lastUpdated": "2026-08-12T12:00:09.855Z",
         "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
       }
     ],
