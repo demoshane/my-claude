@@ -25,11 +25,11 @@ After task completion: one sentence on what could have been faster (only if non-
 - Never use Bash for commands producing >20 lines. Use `mcp__plugin_context-mode_context-mode__batch_execute` or `execute_file`.
 
 ## Quota-expensive tasks — delegate to user
-- Full test suites, long builds, Playwright runs, and other slow/output-heavy commands burn tool quota unnecessarily.
-- Instead: ask the user to run them and paste/report back. Example: "Can you run `uv run pytest tests/ -q` and share the tail?"
-- Apply this to: full `pytest` suite runs, `make dev`, npm builds, docker builds, and any command likely to run >30s or produce >100 lines.
-- **Exception:** Focused test runs (single file or `-k` filter) can be run directly via Bash.
-- **Never** run `pytest tests/` or any multi-directory command for full-suite verification — delegate to user even with `--ignore` flags narrowing it.
+- Judge by **measured cost, not by command name**: delegate when a command actually runs >60s or produces >100 lines. Run it yourself otherwise.
+- Typically delegate: `make dev`, docker builds, npm builds, Playwright runs, anything that spins up services or waits on a network.
+- **Test suites are not automatically expensive.** Run them directly when they're fast — e.g. mearra-agents-platform's full `pytest -q` is ~12s and ~10 lines of output. Delegate only a suite that is genuinely slow, and say why.
+- Use `-q` and pipe through `tail` so a long tail of warnings doesn't flood the context.
+- If unsure, time it once with a narrow run and decide from the number.
 
 ## Learning Habit
 - After a fix: only write a learning if the rule is **universally applicable** to future work AND not already covered by CLAUDE.md. One-time bugs and generic coding mistakes belong in git history.
