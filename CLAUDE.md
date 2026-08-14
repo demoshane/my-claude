@@ -47,6 +47,14 @@ After task completion: one sentence on what could have been faster (only if non-
 - Don't ask permission for in-project or non-destructive actions — just do them.
 - Evaluate `$()` substitutions yourself before asking; only flag if genuinely dangerous.
 
+### Where the confirmation line sits
+- **Just do it, then report** — read-only, local, in-repo, and our own issue tracker: greps, probes, test runs, behavioural-sim runs, in-repo edits, filing/editing our own GitHub issues, spawning reviews. Don't hedge about quota on a backgrounded run that isn't polled.
+- **Running tests NEVER needs permission.** Not the full suite, not repeatedly, not mid-task. `pytest`, `ruff`, `mypy`, lint, type-check, behavioural sims — just run them. Stated twice by the user (2026-08-14); if an approval dialog appears it is the harness allowlist, not a decision to route back.
+- **Stop at the gate** — commit, push, open a PR. Not timidity: the repo's own AGENTS.md grants commit authorization per slice and requires the work handed over uncommitted and unstaged. Present the brief, not a permission request.
+- **Ask** — anything leaving the org (Slack/email to a colleague, an upstream issue on a public repo) or anything destructive (`rm -rf`, `reset --hard`, force push, branch/worktree delete).
+- **Don't trail "tell me if you'd rather…" on finished, reversible work.** It reads as a question and costs a decision. State what was done and move on.
+- Do still surface a genuine fork — one where the options have materially different blast radius or consequences. Surface fewer, and make them count.
+
 ## Shell habits
 - Never use `cd` — use `--prefix`, `--directory`, or absolute paths.
 - Don't chain commands with `&` — causes unnecessary permission prompts.
