@@ -1,10 +1,10 @@
 ## Coaching mode — ALWAYS active outside GSD workflows
 
-**Before starting any non-trivial task** (anything beyond a single file edit or a simple lookup), ALWAYS ask:
+**Before a substantial piece of work** — a new feature, a slice touching production, anything where a wrong assumption costs a rebuild — ask:
 - "Hard constraints?" — deadline, must-not-break, performance budget, etc.
 - "Known gotchas?" — things that have bitten before, sharp edges in this area
 
-Skip these two questions only when: (a) inside a GSD workflow that already has its own context-gathering step, or (b) the task is trivially small (single edit, quick lookup).
+**Not before every task.** Ask when the answer would change what gets built; otherwise proceed on sensible defaults and say which you assumed. Routine edits, lookups, fixes, reviews, and anything inside a GSD workflow (which gathers its own context) do not warrant them.
 
 During work:
 - Vague requirements → clarifying questions upfront, not iteration through failures
@@ -16,13 +16,21 @@ After task completion: one sentence on what could have been faster (only if non-
 
 ## Git
 - Never commit automatically. Only commit when the user explicitly asks.
-- Always use `/usr/bin/git -C /path/to/repo` — bare `git` is broken by scm_breeze shell plugin.
+- **Use `rtk git -C /path/to/repo`** for reads (`status`, `log`, `diff`, `show`, `branch`, `worktree list`). It bypasses the scm_breeze shell plugin the same way an absolute path does, *and* it goes through rtk so the output is token-compacted. Verified 2026-08-17.
+- Use `/usr/bin/git -C /path/to/repo` for **commits, pushes, rebases, and worktree add/remove**, and any time output must be verbatim (reading a full commit message, exact diff text) — rtk compacts, which is the point for reads and a hazard when the exact bytes matter.
+- Never bare `git` — broken by scm_breeze.
+- *Why this matters:* `/usr/bin/git` does **not** match rtk's `git …` hook, so every absolute-path git call bypasses rtk entirely. rtk saves ~31–37% on comparable read commands.
 
 ## Web / Fetching
-- Never use WebFetch — blocked by hook. Use `mcp__plugin_context-mode_context-mode__fetch_and_index` instead.
+- **Use `WebFetch` to read a URL, `WebSearch` to find one.** Both work. (Verified 2026-08-17: no hook blocks WebFetch and there are no deny/ask permission rules — the old "blocked by hook, use context-mode" rule referred to a plugin that is no longer installed.)
+- For library/SDK questions prefer the source over prose: the pinned `.venv` first, then official docs. Fetching a blog post about an API is the last resort, not the first.
 
 ## Large command output
-- Never use Bash for commands producing >20 lines. Use `mcp__plugin_context-mode_context-mode__batch_execute` or `execute_file`.
+*(The old rule pointed at `context-mode`, which is no longer installed. Bound the output instead — these are the practices that actually work.)*
+- **Bound it at the source**: `-q`, `| tail -N`, `| head -N`, `--json … --jq …`, `--stat` instead of a full diff, `grep -c` instead of a dump.
+- **rtk already compacts** `read` / `grep` / `ls` / `gh` / `git` automatically via its PreToolUse hook — ~31–37% saved, nothing to do by hand. Use `rtk git` rather than `/usr/bin/git` for reads so git output goes through it too (see § Git).
+- **Oversized output is persisted by the harness**, not lost — it returns a file path plus a preview. Read the file selectively rather than re-running the command narrower.
+- **Park intermediates in the scratchpad** and read back only what's needed, instead of piping a large result through the conversation.
 
 ## Quota-expensive tasks — delegate to user
 - Judge by **measured cost, not by command name**: delegate when a command actually runs >60s or produces >100 lines. Run it yourself otherwise.
@@ -60,7 +68,9 @@ After task completion: one sentence on what could have been faster (only if non-
 - Don't chain commands with `&` — causes unnecessary permission prompts.
 
 ## Platform
-- Apple Silicon Mac (arm64), Anthropic Max plan (no API key). Python 3.13 pinned.
+- Apple Silicon Mac (arm64), Anthropic Max plan (no API key).
+- **Python version is per-project, not global** — read the project's `pyproject.toml`. (mearra-agents-platform pins `>=3.11,<3.12`; system `python3` is 3.14.) A previous global "3.13 pinned" line came from a different project and was wrong here.
+- `GOOGLE_CLOUD_PROJECT=mearra-agents-dev` is exported in `~/.zshenv` (not `.zshrc` — tool shells are non-interactive), so GCP commands need no env prefix.
 
 ## Plan Mode
 - Extremely concise plans. Sacrifice grammar for brevity.

@@ -26,4 +26,6 @@ which rtk             # Verify correct binary
 All other commands are automatically rewritten by the Claude Code hook.
 Example: `git status` → `rtk git status` (transparent, 0 tokens overhead)
 
-Refer to CLAUDE.md for full command reference.
+Full command reference: `rtk --help` (it lists the wrapped commands — `git`, `gh`,
+`glab`, `aws`, `psql`, and the read/grep/ls family). CLAUDE.md § Git covers the one
+gotcha: `/usr/bin/git` bypasses the hook, so use `rtk git` for reads.

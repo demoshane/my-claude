@@ -15,3 +15,26 @@ When adding columns to UPDATE/INSERT statements, verify the column exists in bot
 `printToPDF` clips at scroll containers. Any `body { height: 100vh }` + `main { overflow-y: auto }` layout produces a viewport-sized PDF. Always include in `@media print`: `html, body { height: auto; overflow: visible }` and the same on every scrollable ancestor down to the content element.
 
 ---
+
+## "Verified" Means Only The Path You Exercised
+
+Never present a checked and an unchecked cell in the same table and call the table verified. Mark what you did not check — a `—` reads as "checked, nothing there". Same for probes: a read-only probe does not verify the write path, one model's numbers are not another's, and a non-streaming test says nothing about streaming. When reporting, name the path exercised, not the neighbourhood.
+
+---
+
+## A Passing Test Proves Nothing Until It Fails
+
+Disable the fix and re-run: the new test MUST fail. A test written against a predicate that already matched, or an assertion that mirrors the line of code, passes forever and guards nothing. Re-run this check **after a rebase or refactor** too — restructuring silently invalidates the earlier proof.
+
+---
+
+## Merged Cleanly + Tests Green ≠ Merged Correctly
+
+An auto-merge can leave two definitions of the same function; the later one silently wins and deletes the other's behaviour, with a green suite. After any merge that touched the same region twice, grep for duplicate definitions and diff the result against BOTH parents.
+
+---
+
+## Intermittent Failure: Capture Before Theorising
+
+For a rare, content-dependent failure, instrument and capture the failing artifact (the actual request, payload, state) before reasoning about causes. Hypotheses cost turns and mislead; one capture usually settles it. Bisecting is the wrong instrument here — noisy pass/fail across expensive runs.
+
