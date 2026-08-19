@@ -10,9 +10,9 @@ When adding columns to UPDATE/INSERT statements, verify the column exists in bot
 
 ---
 
-## Electron printToPDF — Unlock Height Chain
+## Never Pipe Into a Hook-Rewritten CLI
 
-`printToPDF` clips at scroll containers. Any `body { height: 100vh }` + `main { overflow-y: auto }` layout produces a viewport-sized PDF. Always include in `@media print`: `html, body { height: auto; overflow: visible }` and the same on every scrollable ancestor down to the content element.
+The rtk PreToolUse hook rewrites bare `grep`/`ls`/`read` to `rtk <cmd>`, which is a *command*, not a stdin filter: `… | grep -v X` becomes `rtk grep -v X`, reads it as "search X in `.`", and blocks forever. Three "background tasks" sat hung for 30 min each looking like progress. In a pipe always use `/usr/bin/grep`; keep the wrapper at the head of a command where the hook intends it.
 
 ---
 
