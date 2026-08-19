@@ -41,7 +41,7 @@ After task completion: one sentence on what could have been faster (only if non-
 
 ## Learning Habit
 - After a fix: only write a learning if the rule is **universally applicable** to future work AND not already covered by CLAUDE.md. One-time bugs and generic coding mistakes belong in git history.
-- **Truly universal** (applies to any project) → `~/.claude/LEARNINGS.md`
+- **Truly universal** (applies to any project) → `~/.claude/LEARNINGS.md`, imported at the bottom of this file so it actually loads. (Until 2026-08-19 it was named here but never imported — entries were written to a file nothing read.)
 - **Project-universal** (applies to all future work in that project) → project's `.claude/LEARNINGS.md`
 - Be strict — both files have a 40-line / 80-line cap respectively. If full, replace the least valuable entry.
 
@@ -93,3 +93,5 @@ Refer to @~/.claude/SECURITY.md for data flow, risk matrix, and guardrail docume
 When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.
 
 @RTK.md
+
+@LEARNINGS.md
