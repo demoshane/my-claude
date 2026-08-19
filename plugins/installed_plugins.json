@@ -23,21 +23,21 @@
       },
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/7ed523140f50",
-        "version": "7ed523140f50",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/e91eda9faed3",
+        "version": "e91eda9faed3",
         "installedAt": "2026-08-12T12:00:09.855Z",
-        "lastUpdated": "2026-08-12T12:00:09.855Z",
-        "gitCommitSha": "7ed523140f506611c968a0ec32e1dfc40a1d5673"
+        "lastUpdated": "2026-08-18T14:55:26.364Z",
+        "gitCommitSha": "e91eda9faed355b55d63a95636d1e0875c092a3c"
       }
     ],
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/674cb2ef576e",
-        "version": "674cb2ef576e",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/e91eda9faed3",
+        "version": "e91eda9faed3",
         "installedAt": "2026-04-11T12:53:57.303Z",
-        "lastUpdated": "2026-06-30T12:54:45.490Z",
-        "gitCommitSha": "674cb2ef576e31b554e6b2bde67394872c7beb78"
+        "lastUpdated": "2026-08-18T14:55:26.363Z",
+        "gitCommitSha": "e91eda9faed355b55d63a95636d1e0875c092a3c"
       }
     ],
     "claude-md-management@claude-plugins-official": [
@@ -82,11 +82,11 @@
     "semgrep@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/semgrep/2.0.3",
-        "version": "2.0.3",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/semgrep/2.1.4",
+        "version": "2.1.4",
         "installedAt": "2026-04-11T12:54:19.429Z",
-        "lastUpdated": "2026-06-27T00:17:05.072Z",
-        "gitCommitSha": "8e652ba6f586bb20377a72792c402c5a85a9b284"
+        "lastUpdated": "2026-08-18T14:55:30.919Z",
+        "gitCommitSha": "426442e17e135a302b220e43b57c102cb33b39bb"
       }
     ],
     "ralph-loop@claude-plugins-official": [
