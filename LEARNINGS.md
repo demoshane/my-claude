@@ -18,13 +18,13 @@ The rtk PreToolUse hook rewrites bare `grep`/`ls`/`read` to `rtk <cmd>`, which i
 
 ## "Verified" Means Only The Path You Exercised
 
-Never present a checked and an unchecked cell in the same table and call the table verified. Mark what you did not check — a `—` reads as "checked, nothing there". Same for probes: a read-only probe does not verify the write path, one model's numbers are not another's, and a non-streaming test says nothing about streaming. When reporting, name the path exercised, not the neighbourhood.
+Never present a checked and an unchecked cell in the same table and call the table verified. Mark what you did not check — a `—` reads as "checked, nothing there". Same for probes: a read-only probe does not verify the write path, one model's numbers are not another's, and a non-streaming test says nothing about streaming. When reporting, name the path exercised, not the neighbourhood. And **a 0 result confirms the query, not the hypothesis** — I probed "X present but Y absent", got 0 rows, reported "not reachable", and the real cases had X absent too, so the query could not see what it was written to test. Before trusting an empty result, ask what shape it would have had to have to show up.
 
 ---
 
 ## A Passing Test Proves Nothing Until It Fails
 
-Disable the fix and re-run: the new test MUST fail. A test written against a predicate that already matched, or an assertion that mirrors the line of code, passes forever and guards nothing. Re-run this check **after a rebase or refactor** too — restructuring silently invalidates the earlier proof.
+Disable the fix and re-run: the new test MUST fail. A test written against a predicate that already matched, or an assertion that mirrors the line of code, passes forever and guards nothing. Re-run this check **after a rebase or refactor** too — restructuring silently invalidates the earlier proof. **Mutate every fix, not just the feature**, and for a guard over *prose* pin the claim and its sentence terminator, never a neighbouring phrase: asserting `"stack" in text` survived deleting what to look for in the stack, and an imperative survived appending "though it usually is fine" because the assertion stopped before the full stop. Three sessions rediscovered this shape independently in one day.
 
 ---
 
