@@ -4,9 +4,9 @@ Cross-project rules from past bugs. Strict filter: only truly universal patterns
 
 ---
 
-## SQL Migrations — Verify Column Exists
+## A Reviewer Points At An Instance; Fix The Class
 
-When adding columns to UPDATE/INSERT statements, verify the column exists in both CREATE TABLE schema AND the migration chain. Test with a fresh DB.
+One false claim took four review rounds because each round I fixed the line pointed at and never grepped for the claim. The fifth instance was three words from the phrase I had just rewritten. When a review names a wrong statement, search every file for the *claim*, not the sentence — then fix them in one pass. Corollary: **a clean verdict is not an empty one.** Three of those five came from Copilot's *suppressed* comments while the headline read "no new comments"; always open the suppressed block.
 
 ---
 
