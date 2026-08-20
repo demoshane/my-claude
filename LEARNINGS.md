@@ -6,7 +6,7 @@ Cross-project rules from past bugs. Strict filter: only truly universal patterns
 
 ## A Reviewer Points At An Instance; Fix The Class
 
-One false claim took four review rounds because each round I fixed the line pointed at and never grepped for the claim. The fifth instance was three words from the phrase I had just rewritten. When a review names a wrong statement, search every file for the *claim*, not the sentence — then fix them in one pass. Corollary: **a clean verdict is not an empty one.** Three of those five came from Copilot's *suppressed* comments while the headline read "no new comments"; always open the suppressed block.
+One false claim took four review rounds because each round I fixed the line pointed at and never grepped for the claim. The fifth instance was three words from the phrase I had just rewritten. When a review names a wrong statement, search every file for the *claim*, not the sentence — then fix them in one pass. Corollary: **a clean verdict is not an empty one.** Three of those five came from Copilot's *suppressed* comments while the headline read "no new comments"; always open the suppressed block. **Re-measuring a figure invalidates the sentences derived from it**, so after changing any number grep the OLD value (a targeted `sed` fixes the phrase it matched and leaves "40 of those 234" spelled differently) — and re-derive the paragraph's *claims* too, because "on no row that has EOL data" was not a number, no grep would find it, and it had silently become false.
 
 ---
 
