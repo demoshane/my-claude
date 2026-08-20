@@ -34,7 +34,12 @@ An auto-merge can leave two definitions of the same function; the later one sile
 
 ---
 
-## Intermittent Failure: Capture Before Theorising
+## A Bounded Probe's Negative Result Describes The Bound, Not The World
 
-For a rare, content-dependent failure, instrument and capture the failing artifact (the actual request, payload, state) before reasoning about causes. Hypotheses cost turns and mislead; one capture usually settles it. Bisecting is the wrong instrument here — noisy pass/fail across expensive runs.
-
+`ps` truncating a command line, `grep -A3` cutting off the fourth list entry,
+`| tail -25` discarding a run's summary, a test re-implementing the logic it meant
+to check, a guard rebinding a constant computed at import — five in one session,
+each returning a **confident** wrong answer, each an artefact of the query's shape
+rather than a fact. Two corollaries: **verify with the shipped thing, not a copy**
+(extract it if it is unreachable), and when the claim is structural — "there is one
+derivation, not two" — no value comparison can make it, so read the source.
