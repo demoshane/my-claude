@@ -15,29 +15,29 @@
       {
         "scope": "local",
         "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/a6bfefffa07e",
-        "version": "a6bfefffa07e",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/1072814a1c04",
+        "version": "1072814a1c04",
         "installedAt": "2026-04-11T12:53:43.485Z",
-        "lastUpdated": "2026-08-21T01:26:54.721Z",
-        "gitCommitSha": "a6bfefffa07e65d7cedc3fe957363eae390aa1fd"
+        "lastUpdated": "2026-08-22T00:50:39.160Z",
+        "gitCommitSha": "1072814a1c044a4ca8794c9c9b0d7f48c50b6b14"
       },
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/a6bfefffa07e",
-        "version": "a6bfefffa07e",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/frontend-design/1072814a1c04",
+        "version": "1072814a1c04",
         "installedAt": "2026-08-12T12:00:09.855Z",
-        "lastUpdated": "2026-08-21T01:26:54.811Z",
-        "gitCommitSha": "a6bfefffa07e65d7cedc3fe957363eae390aa1fd"
+        "lastUpdated": "2026-08-22T00:50:39.168Z",
+        "gitCommitSha": "1072814a1c044a4ca8794c9c9b0d7f48c50b6b14"
       }
     ],
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/a6bfefffa07e",
-        "version": "a6bfefffa07e",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playwright/1072814a1c04",
+        "version": "1072814a1c04",
         "installedAt": "2026-04-11T12:53:57.303Z",
-        "lastUpdated": "2026-08-21T01:26:54.719Z",
-        "gitCommitSha": "a6bfefffa07e65d7cedc3fe957363eae390aa1fd"
+        "lastUpdated": "2026-08-22T00:50:39.159Z",
+        "gitCommitSha": "1072814a1c044a4ca8794c9c9b0d7f48c50b6b14"
       }
     ],
     "claude-md-management@claude-plugins-official": [
@@ -115,11 +115,11 @@
       {
         "scope": "local",
         "projectPath": "/Users/tuomasleppanen/second-brain/.claude/worktrees/upbeat-jackson",
-        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/a6bfefffa07e",
-        "version": "a6bfefffa07e",
+        "installPath": "/Users/tuomasleppanen/.claude/plugins/cache/claude-plugins-official/playground/1072814a1c04",
+        "version": "1072814a1c04",
         "installedAt": "2026-04-11T12:55:24.340Z",
-        "lastUpdated": "2026-08-21T01:26:54.713Z",
-        "gitCommitSha": "a6bfefffa07e65d7cedc3fe957363eae390aa1fd"
+        "lastUpdated": "2026-08-22T00:50:39.162Z",
+        "gitCommitSha": "1072814a1c044a4ca8794c9c9b0d7f48c50b6b14"
       }
     ]
   }
