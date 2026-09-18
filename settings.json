@@ -275,5 +275,6 @@
   },
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "model": "sonnet"
+  "model": "sonnet",
+  "autoCompactWindow": "600k"
 }
