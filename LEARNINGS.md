@@ -28,9 +28,13 @@ Disable the fix and re-run: the new test MUST fail. A test written against a pre
 
 ---
 
-## Merged Cleanly + Tests Green ≠ Merged Correctly
+## `main` Is Not What You Assume — Check Before You Start, And After You Merge
 
-An auto-merge can leave two definitions of the same function; the later one silently wins and deletes the other's behaviour, with a green suite. After any merge that touched the same region twice, grep for duplicate definitions and diff the result against BOTH parents.
+**An issue's OPEN state says nothing about whether the work is claimed.** `gh issue view 1903` read `open`, so I built the fix, opened a PR, answered two Copilot rounds, fixed a docs gate and settled CI — while #1918 had been open the whole time and merged a *better* fix (it repaired the reach defect I only waived) an hour before I tried to merge. An issue stays OPEN until its PR lands, so OPEN is the state of the issue, never of the work. **`gh pr list --search <issue>` before starting and again before merging** is the only thing that answers, and costs seconds. Two rebases onto a moving `main` did not reveal it: a rival PR is invisible in the log until it merges, so "I am up to date with main" is not the same question.
+
+**And OPEN does not mean unfixed — nor does the body describe today's tree.** Seven tickets were handed to me to implement; three were already delivered and a fourth was a duplicate, found only by opening the source. #961's headline — "a 36-minute sim run is ~6 minutes of work" — had been fixed months earlier, `Semaphore` + `gather` sitting in the file it named. #963 listed twelve call sites, eleven at paths that no longer exist. #1785 and #1153 are one `asyncio.gather` missing `return_exceptions`, filed twice off two incidents. I had ranked all seven by payoff÷effort **from the issue bodies alone** and shipped a confident order whose top was mostly air. An issue body is a measurement dated to its filing, so in an active repo a backlog is archaeology: open the code a ticket names *before* estimating it, because effort is the number staleness destroys first, and a stale ticket fails in only one direction — it looks like work. Expect the best-*described* defects to be the likeliest already fixed, since a good description is what got someone to fix it early.
+
+**And after a merge, green does not mean correct.** An auto-merge can leave two definitions of the same function; the later one silently wins and deletes the other's behaviour, with a green suite. After any merge that touched the same region twice, grep for duplicate definitions and diff the result against BOTH parents.
 
 ---
 
