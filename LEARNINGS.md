@@ -40,6 +40,22 @@ Disable the fix and re-run: the new test MUST fail. A test written against a pre
 
 ## A Bounded Probe's Negative Result Describes The Bound, Not The World
 
+**A probe must make "I could not tell" a distinct observable from "nothing is wrong."**
+Four in one day, four layers, one shape: a sim's progress `print` block-buffered on a
+non-tty, so a killed run and a healthy one logged identically (#997); a `gh` GraphQL
+call that timed out, returned empty arrays, and made my CI watcher read `pending=0`
+and report **GREEN** while pytest was still running; a peer's `until ! gh pr checks |
+grep -q pending` loop that exited because one invocation returned something the grep
+did not match, and nearly merged on it; and a mutation sweep with no per-iteration
+timeout, where the mutation that HANGS prints nothing and is indistinguishable from
+progress. Each returned a confident wrong answer built from the probe's own failure
+mode. So: give the failure its own value — `wait_for(..., timeout)` with TimeoutError
+counted as a named outcome turns a hanging mutation into a CAUGHT one rather than an
+inconclusive one; read rows, not a wrapper's exit status; and never let an empty
+result and a failed query share a code path. If the probe cannot say "I could not
+tell", it is not evidence.
+
+
 `ps` truncating a command line, `grep -A3` cutting off the fourth list entry,
 `| tail -25` discarding a run's summary, a test re-implementing the logic it meant
 to check, a guard rebinding a constant computed at import — five in one session,
@@ -47,3 +63,13 @@ each returning a **confident** wrong answer, each an artefact of the query's sha
 rather than a fact. Two corollaries: **verify with the shipped thing, not a copy**
 (extract it if it is unreachable), and when the claim is structural — "there is one
 derivation, not two" — no value comparison can make it, so read the source.
+
+Sharper still: **a probe must make "I could not tell" a distinct observable from
+"nothing is wrong", and if it cannot, the probe is not evidence.** Four instances in
+one day, four layers, one shape: a block-buffered `print` (a killed run looked like a
+healthy one), a timed-out GraphQL call returning empty arrays (read as CI green while
+tests ran), `until ! gh pr checks | grep -q pending` exiting because one invocation
+returned something the grep missed (I began a merge on it), and a mutation sweep with
+no per-iteration timeout. Falling out of it: count a TimeoutError as a named outcome,
+read the rows rather than a wrapper's exit status, and never let an empty result and a
+failed query share a code path.
