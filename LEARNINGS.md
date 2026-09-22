@@ -34,6 +34,18 @@ Disable the fix and re-run: the new test MUST fail. A test written against a pre
 
 **And OPEN does not mean unfixed — nor does the body describe today's tree.** Seven tickets were handed to me to implement; three were already delivered and a fourth was a duplicate, found only by opening the source. #961's headline — "a 36-minute sim run is ~6 minutes of work" — had been fixed months earlier, `Semaphore` + `gather` sitting in the file it named. #963 listed twelve call sites, eleven at paths that no longer exist. #1785 and #1153 are one `asyncio.gather` missing `return_exceptions`, filed twice off two incidents. I had ranked all seven by payoff÷effort **from the issue bodies alone** and shipped a confident order whose top was mostly air. An issue body is a measurement dated to its filing, so in an active repo a backlog is archaeology: open the code a ticket names *before* estimating it, because effort is the number staleness destroys first, and a stale ticket fails in only one direction — it looks like work. Expect the best-*described* defects to be the likeliest already fixed, since a good description is what got someone to fix it early.
 
+**And the authoritative check is the one that shrinks the work, so order probes by
+authority, not by proximity.** Asked whether a tracker was tidy, I measured 80 issues
+over `--state all` and reported a label gap; ten of the thirteen offenders were already
+closed, so the audit was of items no backlog search reads. Asked to sweep worktrees, I
+sized 64 local branches before asking GitHub which had merged PRs — 48 did, and one
+GraphQL call answered for all of them. Local state is the *proximate* measurement and
+almost never the *deciding* one: a remote's merged/closed state, or the file as it
+stands on `main`, both costs less and can answer what the local count cannot. So before
+measuring N things, run the one query that says how many of the N are already dead. A
+local audit's size is not evidence that the work is real — it is usually evidence the
+authoritative query has not been run yet.
+
 **And after a merge, green does not mean correct.** An auto-merge can leave two definitions of the same function; the later one silently wins and deletes the other's behaviour, with a green suite. After any merge that touched the same region twice, grep for duplicate definitions and diff the result against BOTH parents.
 
 ---
