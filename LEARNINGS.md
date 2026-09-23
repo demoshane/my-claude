@@ -1,6 +1,6 @@
 # Global Learnings
 
-Cross-project rules from past bugs. Strict filter: only truly universal patterns. Keep under 40 lines.
+Cross-project rules from past bugs. Strict filter: only truly universal patterns. Max 6 entries (see CLAUDE.md ยง Learning Habit).
 
 ---
 
@@ -83,13 +83,3 @@ precisely named nothing. A gate caught it, not me. An identifier is not prose โ€
 either copied from the tool that emits it (`git rev-parse HEAD`) or it is fabricated,
 and a plausible-looking one is worse than an obviously missing one because it reads as
 precision. Same rule for line numbers, issue numbers and file paths quoted from memory.
-
-Sharper still: **a probe must make "I could not tell" a distinct observable from
-"nothing is wrong", and if it cannot, the probe is not evidence.** Four instances in
-one day, four layers, one shape: a block-buffered `print` (a killed run looked like a
-healthy one), a timed-out GraphQL call returning empty arrays (read as CI green while
-tests ran), `until ! gh pr checks | grep -q pending` exiting because one invocation
-returned something the grep missed (I began a merge on it), and a mutation sweep with
-no per-iteration timeout. Falling out of it: count a TimeoutError as a named outcome,
-read the rows rather than a wrapper's exit status, and never let an empty result and a
-failed query share a code path.
