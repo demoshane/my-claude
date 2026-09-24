@@ -43,7 +43,8 @@ After task completion: one sentence on what could have been faster (only if non-
 - After a fix: only write a learning if the rule is **universally applicable** to future work AND not already covered by CLAUDE.md. One-time bugs and generic coding mistakes belong in git history.
 - **Truly universal** (applies to any project) → `~/.claude/LEARNINGS.md`, imported at the bottom of this file so it actually loads. (Until 2026-08-19 it was named here but never imported — entries were written to a file nothing read.)
 - **Project-universal** (applies to all future work in that project) → project's `.claude/LEARNINGS.md`
-- Be strict. `~/.claude/LEARNINGS.md` holds **max 6 entries**; a project's `.claude/LEARNINGS.md` holds **max 10**. Counted in entries, not lines — a line budget punishes the entry that carries its evidence, which is the entry worth keeping.
+- Be strict. `~/.claude/LEARNINGS.md` holds **max 6 entries**; a project's `.claude/LEARNINGS.md` holds **max 10**. Each entry is a short rule (a few lines); its incident evidence goes to second-brain (tag `learnings`), searchable rather than loaded every session.
+- **A rule that repeats gets promoted, not reworded**: prose → skill/checklist → script → hook. Text loaded at session start is weakest at the moment of action; a mechanism fires every time.
 - **Swap or decline — never defer.** When the file is full, either the new rule beats the weakest entry (swap it, and say in the reply which entry went and why) or it does not belong there and goes to the project file or nowhere. "I'll ask next time" loses the learning entirely, which is worse than a slightly crowded file.
 - Eviction is triage, not deletion: `~/.claude` is a git repo, so an evicted entry is recoverable with `git -C ~/.claude log -p LEARNINGS.md`. Say so when you swap, so the decision reads as filing rather than discarding.
 - The cap is an **attention** budget, not a storage one — `LEARNINGS.md` is imported into every session on every project, so it competes with CLAUDE.md itself for standing weight. Raising it makes the file scrolled past rather than read.
@@ -52,6 +53,8 @@ After task completion: one sentence on what could have been faster (only if non-
 - Before saving a memory, check if the content is already covered by any CLAUDE.md file. If so, don't save — CLAUDE.md is the source of truth.
 - When feedback gets promoted into CLAUDE.md, delete the corresponding memory file and remove it from MEMORY.md.
 - After completing a milestone, review and prune `project`-type memories — most become stale once the work ships.
+- **Recall before substantial work** (not routine edits): search past sessions (`search_session_transcripts`) and second-brain (`sb_search`) for the topic first. That's the on-demand memory tier; nothing auto-captures, so the always-loaded files stay small.
+- The memory directory is **gitignored** — deleting a memory file is permanent. Archive to `memory/_archive/` instead.
 
 ## Scope Discipline
 - Never perform actions beyond what the user explicitly asked for. When in doubt, ask first.

@@ -68,7 +68,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "rtk hook claude"
+            "command": "/Users/tuomasleppanen/.claude/hooks/bash-rewrite.py",
+            "timeout": 10
           }
         ]
       },
