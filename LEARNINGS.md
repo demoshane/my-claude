@@ -6,7 +6,7 @@ Cross-project rules from past bugs. Max 6 entries, each a short rule (CLAUDE.md 
 
 ## A reviewer points at an instance; fix the class
 
-When a review names a wrong statement, grep every file for the *claim*, not the sentence, and fix all instances in one pass. Open the suppressed review comments — a clean headline is not an empty review. After changing a number, grep the old value and re-check every claim derived from it.
+When a review names a wrong statement, grep every file for the *claim*, not the sentence, and fix all instances in one pass. **Grep the whole tree, not the directories you expect** — a sweep scoped to the three dirs you were working in feels thorough and leaves the class alive in the fourth. One PR: a renamed verb survived in a test-only registry under `infra/`, in an agent README, then the same stale claim in three more files — three review findings, one bounded search each. Open the suppressed review comments — a clean headline is not an empty review. After changing a number, grep the old value and re-check every claim derived from it.
 
 ## Never pipe into a hook-rewritten CLI
 
