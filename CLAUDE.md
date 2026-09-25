@@ -17,8 +17,10 @@ After task completion: one sentence on what could have been faster (only if non-
 ## Economy — quota is a budget, plan the cheapest route first (all projects, all sessions)
 Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour window in minutes. **Before starting anything non-trivial, plan the most economical route to the goal and say it in one line.**
 - **Model and effort follow the work.** Default: Sonnet at high effort for implementation, reviews, research and subagents. Opus only for design/orchestration or a review that genuinely needs it; `max` effort only when the user asks. Every `Agent` call names `model:` explicitly (`sonnet`, or `haiku` for lookups). Spawned or dispatched sessions get the same rule written into their brief.
-- **Parallelism is capped at 2** working sessions (a session plus its subagents counts as one load). Check `get_usage` before fanning out; if the 5-hour window is over ~50%, go serial.
+- **A session that lives across multiple days re-justifies its model each time real new work starts in it** — don't let the model choice from the first message ride indefinitely. Found 2026-09-25: a SecOps validation session ran straight opus-5 for 8+ days on deterministic pass/fail checks that didn't need it.
+- **Parallelism is capped at 2** working sessions (a session plus its subagents counts as one load). Check `get_usage` before fanning out — its weekly quota is bucketed per model tier (e.g. "Weekly · Fable" separate from "Weekly · all models"), so check the bucket for the model you're about to use, not just the aggregate; if the 5-hour window is over ~50%, go serial.
 - **Keep contexts short.** A session past ~200k tokens hands off to a fresh one via a compact state file instead of re-reading its history every turn. One session per task; don't let a slice run to 1000+ messages.
+- **Decompose large source materials before working them.** A large PDF/Doc/export gets converted once into token-efficient Markdown (plus extracted images/tables as needed) in a scratch location; work from that from then on, and touch the original only when a specific gap requires it.
 - **Scale process to risk.** Mutation proofs, brutal reviews, sim ladders and extra review rounds only where a trigger or real risk warrants them — not by default on every change.
 - **Messages between sessions carry decisions only**; each one wakes a full-context turn on both sides. **Exception (2026-09-25): in an orchestrated batch, slices and the orchestrator message each other freely**: status, questions, heads-ups. Coordination beats the turn cost there. Peer sessions outside a batch keep the decisions-only rule.
 - Never hold a blocking question while other sessions are working — post it as a status line and keep going.
@@ -83,7 +85,7 @@ Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour w
 - Don't chain commands with `&` — causes unnecessary permission prompts.
 
 ## Platform
-- Apple Silicon Mac (arm64), Anthropic Max plan (no API key).
+- Apple Silicon Mac (arm64), Max-tier usage via a Team plan subscription (no API key) — `get_usage` reports the plan as "Team"; that's correct, not stale.
 - **Python version is per-project, not global** — read the project's `pyproject.toml`. (mearra-agents-platform pins `>=3.11,<3.12`; system `python3` is 3.14.) A previous global "3.13 pinned" line came from a different project and was wrong here.
 - `GOOGLE_CLOUD_PROJECT=mearra-agents-dev` is exported in `~/.zshenv` (not `.zshrc` — tool shells are non-interactive), so GCP commands need no env prefix.
 
