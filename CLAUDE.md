@@ -14,6 +14,15 @@ During work:
 
 After task completion: one sentence on what could have been faster (only if non-obvious). Keep it lightweight — a sentence or question, not a lecture.
 
+## Economy — quota is a budget, plan the cheapest route first (all projects, all sessions)
+Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour window in minutes. **Before starting anything non-trivial, plan the most economical route to the goal and say it in one line.**
+- **Model and effort follow the work.** Default: Sonnet at high effort for implementation, reviews, research and subagents. Opus only for design/orchestration or a review that genuinely needs it; `max` effort only when the user asks. Every `Agent` call names `model:` explicitly (`sonnet`, or `haiku` for lookups). Spawned or dispatched sessions get the same rule written into their brief.
+- **Parallelism is capped at 2** working sessions (a session plus its subagents counts as one load). Check `get_usage` before fanning out; if the 5-hour window is over ~50%, go serial.
+- **Keep contexts short.** A session past ~200k tokens hands off to a fresh one via a compact state file instead of re-reading its history every turn. One session per task; don't let a slice run to 1000+ messages.
+- **Scale process to risk.** Mutation proofs, brutal reviews, sim ladders and extra review rounds only where a trigger or real risk warrants them — not by default on every change.
+- **Messages between sessions carry decisions only**; each one wakes a full-context turn on both sides.
+- Never hold a blocking question while other sessions are working — post it as a status line and keep going.
+
 ## Git
 - Never commit automatically. Only commit when the user explicitly asks.
 - **Use `rtk git -C /path/to/repo`** for reads (`status`, `log`, `diff`, `show`, `branch`, `worktree list`). It bypasses the scm_breeze shell plugin the same way an absolute path does, *and* it goes through rtk so the output is token-compacted. Verified 2026-08-17.
