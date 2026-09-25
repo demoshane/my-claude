@@ -20,7 +20,7 @@ Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour w
 - **Parallelism is capped at 2** working sessions (a session plus its subagents counts as one load). Check `get_usage` before fanning out; if the 5-hour window is over ~50%, go serial.
 - **Keep contexts short.** A session past ~200k tokens hands off to a fresh one via a compact state file instead of re-reading its history every turn. One session per task; don't let a slice run to 1000+ messages.
 - **Scale process to risk.** Mutation proofs, brutal reviews, sim ladders and extra review rounds only where a trigger or real risk warrants them — not by default on every change.
-- **Messages between sessions carry decisions only**; each one wakes a full-context turn on both sides.
+- **Messages between sessions carry decisions only**; each one wakes a full-context turn on both sides. **Exception (2026-09-25): in an orchestrated batch, slices and the orchestrator message each other freely**: status, questions, heads-ups. Coordination beats the turn cost there. Peer sessions outside a batch keep the decisions-only rule.
 - Never hold a blocking question while other sessions are working — post it as a status line and keep going.
 
 ## Git
