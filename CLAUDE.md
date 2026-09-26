@@ -24,6 +24,8 @@ Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour w
 - **Scale process to risk.** Mutation proofs, brutal reviews, sim ladders and extra review rounds only where a trigger or real risk warrants them — not by default on every change.
 - **Messages between sessions carry decisions only**; each one wakes a full-context turn on both sides. **Exception (2026-09-25): in an orchestrated batch, slices and the orchestrator message each other freely**: status, questions, heads-ups. Coordination beats the turn cost there. Peer sessions outside a batch keep the decisions-only rule.
 - Never hold a blocking question while other sessions are working — post it as a status line and keep going.
+- **Every change to Claude/tooling config** (settings, plugins, MCP, hooks, env, agent files) gets a row in `~/.claude/CONFIG_CHANGES.md` — baseline, expected effect, revert — plus a scheduled review 2 days out that proves it or proposes a revert.
+- **Don't switch model or effort mid-task** — both rebuild the whole cache (effort is cache-safe only on Opus 5.5/Fable 5.1). Pick at session start.
 
 ## Git
 - Never commit automatically. Only commit when the user explicitly asks.
