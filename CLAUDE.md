@@ -46,7 +46,7 @@ Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour w
 ## Quota-expensive tasks — delegate to user
 - Judge by **measured cost, not by command name**: delegate when a command actually runs >60s or produces >100 lines. Run it yourself otherwise.
 - Typically delegate: `make dev`, docker builds, npm builds, Playwright runs, anything that spins up services or waits on a network.
-- **Test suites are not automatically expensive.** Run them directly when they're fast — e.g. mearra-agents-platform's full `pytest -q` is ~12s and ~10 lines of output. Delegate only a suite that is genuinely slow, and say why.
+- **Test suites are not automatically expensive.** Run them directly when they're fast — e.g. a few mearra-agents-platform test files take seconds. Its full `pytest -q` (~10k tests) takes ~10 min (measured 2026-09-26): run it with `run_in_background` and a `> log` redirect, not in the foreground under a 5–10 min timeout. Delegate only a suite that is genuinely slow, and say why.
 - Use `-q` and pipe through `tail` so a long tail of warnings doesn't flood the context.
 - If unsure, time it once with a narrow run and decide from the number.
 
