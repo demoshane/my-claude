@@ -1,6 +1,6 @@
 # Global Learnings
 
-Cross-project rules from past bugs. Max 6 entries, each a short rule (CLAUDE.md § Learning Habit). The incidents behind them are in second-brain (tag `learnings`) and in `git -C ~/.claude log -p LEARNINGS.md`.
+Cross-project rules from past bugs. Max 6 entries, each a short rule (CLAUDE.md § Learning Habit). The incidents behind them are in `git -C ~/.claude log -p LEARNINGS.md`.
 
 ---
 

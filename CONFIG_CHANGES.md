@@ -6,6 +6,8 @@ Not imported into CLAUDE.md on purpose (zero per-session cost). `~/.claude` is a
 **Measuring:** `python3 ~/.claude/scripts/usage_by_tier.py BASE_FROM BASE_TO NEW_FROM NEW_TO` (local transcripts, per active day, by model tier) and `npx ccusage@latest daily --since YYYYMMDD`. For attribution/flags run `/usage` in a terminal `claude` session (skills/subagents/MCP share, "long context"/"cache misses" flags).
 
 **Baseline (active days 2026-09-07..09-22, 13 days):** 10 sessions/day · Opus 505 calls/d, 219M ctx, 363k out · Sonnet 1,120 calls/d, 288M ctx · Fable 148 calls/d · claude-mem 1,528 calls/d (4.0M cacheW, 395k out) · avg ctx/call Opus 435k, Sonnet 257k.
+**Context anatomy baseline (since 09-20, `context_anatomy.py`):** main — median N 137 (p90 740), B 89k, g 1.4k/call, baseline share 46%, top-10% sessions 26% of tokens · subagents — median N 76 (p90 308), B 69k, g 1.9k/call, accumulation 77%, top-10% runs (N≈394) 43% of tokens · growth = tool results 54–73%, tool inputs 21–27%.
+**Not applied (B):** parking 74/77 unused agent definitions (~5k tok/context, ~2–3%) — declined by Tuomas 09-26.
 **Heavy-batch reference (09-24..09-26):** 15 sessions/day · Opus 1,285 calls/d, 1,154k out · Sonnet 2,220 calls/d, 794M ctx, 358k/call. Not a normal-day baseline — batch #2088 etc.
 
 ---
@@ -18,6 +20,7 @@ Not imported into CLAUDE.md on purpose (zero per-session cost). `~/.claude` is a
 | 2 | 2026-09-23 | LEARNINGS.md duplicate paragraph removed | `~/.claude/LEARNINGS.md` | −~0.2k tok/context | Superseded by Tuomas's 09-25 rewrite | git history |
 | 3 | 2026-09-2x | sales / design / slack-by-salesforce plugins disabled (by Tuomas, claude.ai) | claude.ai plugin settings | −~5k tok per context & subagent | Confirmed off 09-26 (`ListPlugins` empty) | re-enable in claude.ai |
 | 5 | 2026-09-26 | CLAUDE.md § Economy: +2 rules (log every config change here + 2-day review; no mid-task model/effort switch) | `~/.claude/CLAUDE.md` | ~+100 tok/context; fewer cache rebuilds from switches | 2026-09-28 (qualitative: were changes logged?) | git history |
+| 6 | 2026-09-26 | CLAUDE.md § Economy: +"Size work units to ~100 calls" (A) and +"Read narrow, write narrow" (C) | `~/.claude/CLAUDE.md` | A: est. 15–25% of total (from longest-10% runs); C: a few % | 2026-09-28: `python3 ~/.claude/scripts/context_anatomy.py 2026-09-27` vs baseline below — p90 N and top-10% share should fall | git history |
 | 4 | 2026-09-26 | Serena trial: installed → **removed same day** | uv tool, `~/.claude.json` local MCP, repo `.claude/settings.local.json` hooks | net zero | Closed: Claude made 0 symbol reads (memory `project_serena_trial.md`) | n/a — fully removed |
 
 ## Evaluated, NOT applied (with reason)

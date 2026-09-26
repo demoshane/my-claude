@@ -20,6 +20,8 @@ Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour w
 - **A session that lives across multiple days re-justifies its model each time real new work starts in it** — don't let the model choice from the first message ride indefinitely. Found 2026-09-25: a SecOps validation session ran straight opus-5 for 8+ days on deterministic pass/fail checks that didn't need it.
 - **Parallelism is capped at 2** working sessions (a session plus its subagents counts as one load). Check `get_usage` before fanning out — its weekly quota is bucketed per model tier (e.g. "Weekly · Fable" separate from "Weekly · all models"), so check the bucket for the model you're about to use, not just the aggregate; if the 5-hour window is over ~50%, go serial.
 - **Keep contexts short.** A session past ~200k tokens hands off to a fresh one via a compact state file instead of re-reading its history every turn. One session per task; don't let a slice run to 1000+ messages.
+- **Size work units to ~100 calls.** Context cost grows with the *square* of session length (every call re-sends all history), so one 400-call run costs ~2.5× four 100-call runs. Orchestrators brief subagents and slices with work that fits ~100 calls, and bigger work ends in a short state file for a fresh agent. Measured 2026-09-26: the longest 10% of subagent runs (~400 calls) were 43% of subagent tokens.
+- **Read narrow, write narrow.** Read line ranges, not whole files, and don't re-read what is already in context. Tool results are 54–73% of context growth. Prefer Edit over rewriting a whole file or long heredocs; Claude's own tool inputs are 21–27% of growth.
 - **Decompose large source materials before working them.** A large PDF/Doc/export gets converted once into token-efficient Markdown (plus extracted images/tables as needed) in a scratch location; work from that from then on, and touch the original only when a specific gap requires it.
 - **Scale process to risk.** Mutation proofs, brutal reviews, sim ladders and extra review rounds only where a trigger or real risk warrants them — not by default on every change.
 - **Messages between sessions carry decisions only**; each one wakes a full-context turn on both sides. **Exception (2026-09-25): in an orchestrated batch, slices and the orchestrator message each other freely**: status, questions, heads-ups. Coordination beats the turn cost there. Peer sessions outside a batch keep the decisions-only rule.
@@ -56,7 +58,7 @@ Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour w
 - After a fix: only write a learning if the rule is **universally applicable** to future work AND not already covered by CLAUDE.md. One-time bugs and generic coding mistakes belong in git history.
 - **Truly universal** (applies to any project) → `~/.claude/LEARNINGS.md`, imported at the bottom of this file so it actually loads. (Until 2026-08-19 it was named here but never imported — entries were written to a file nothing read.)
 - **Project-universal** (applies to all future work in that project) → project's `.claude/LEARNINGS.md`
-- Be strict. `~/.claude/LEARNINGS.md` holds **max 6 entries**; a project's `.claude/LEARNINGS.md` holds **max 10**. Each entry is a short rule (a few lines); its incident evidence goes to second-brain (tag `learnings`), searchable rather than loaded every session.
+- Be strict. `~/.claude/LEARNINGS.md` holds **max 6 entries**; a project's `.claude/LEARNINGS.md` holds **max 10**. Each entry is a short rule (a few lines); its incident evidence lives in git history (`git -C ~/.claude log -p LEARNINGS.md`), not in the file.
 - **A rule that repeats gets promoted, not reworded**: prose → skill/checklist → script → hook. Text loaded at session start is weakest at the moment of action; a mechanism fires every time.
 - **Swap or decline — never defer.** When the file is full, either the new rule beats the weakest entry (swap it, and say in the reply which entry went and why) or it does not belong there and goes to the project file or nowhere. "I'll ask next time" loses the learning entirely, which is worse than a slightly crowded file.
 - Eviction is triage, not deletion: `~/.claude` is a git repo, so an evicted entry is recoverable with `git -C ~/.claude log -p LEARNINGS.md`. Say so when you swap, so the decision reads as filing rather than discarding.
@@ -65,9 +67,7 @@ Stated by the user 2026-09-25, after batch #2088 burned the Team plan's 5-hour w
 ## Memory hygiene
 - Before saving a memory, check if the content is already covered by any CLAUDE.md file. If so, don't save — CLAUDE.md is the source of truth.
 - When feedback gets promoted into CLAUDE.md, delete the corresponding memory file and remove it from MEMORY.md.
-- After completing a milestone, review and prune `project`-type memories — most become stale once the work ships.
-- **Recall before substantial work** (not routine edits): search past sessions (`search_session_transcripts`) and second-brain (`sb_search`) for the topic first. That's the on-demand memory tier; nothing auto-captures, so the always-loaded files stay small.
-- The memory directory is **gitignored** — deleting a memory file is permanent. Archive to `memory/_archive/` instead.
+- After completing a milestone, review and prune `project`-type memories — most become stale once the work ships.- The memory directory is **gitignored** — deleting a memory file is permanent. Archive to `memory/_archive/` instead.
 
 ## Scope Discipline
 - Never perform actions beyond what the user explicitly asked for. When in doubt, ask first.
